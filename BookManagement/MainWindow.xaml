@@ -1,0 +1,170 @@
+﻿<Window x:Class="BookManagement.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BookManagement"
+        xmlns:vm="clr-namespace:BookManagement.ViewModel"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+        Background="Transparent"
+        AllowsTransparency="True"
+        mc:Ignorable="d"
+        xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks" xmlns:Menu="clr-namespace:BookManagement.Helpper.Config"
+        Title="MainWindow" Height="700" Width="1000">
+    <Window.DataContext>
+        <vm:MainWindowViewModel/>
+    </Window.DataContext>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="2.3*" />
+        </Grid.ColumnDefinitions>
+        <StackPanel Style="{StaticResource stackPanelMain1}">
+            <Border Style="{StaticResource borderMain}">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="9*"/>
+                    </Grid.RowDefinitions>
+                    <StackPanel 
+                        Orientation="Horizontal" 
+                        Grid.Row="0"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center">
+                        <Border Style="{StaticResource bordeCircle}">
+                            <Icon:PackIconMaterial Width="27" Height="23" 
+                                                   Kind="SendOutline" 
+                                                   Margin="14,9,0,0" 
+                                                   Foreground="#fb6f56" RenderTransformOrigin="0.6,0.558">
+                                <Icon:PackIconMaterial.RenderTransform>
+                                    <TransformGroup>
+                                        <ScaleTransform/>
+                                        <SkewTransform/>
+                                        <RotateTransform Angle="-32.272"/>
+                                        <TranslateTransform/>
+                                    </TransformGroup>
+                                </Icon:PackIconMaterial.RenderTransform>
+                            </Icon:PackIconMaterial>
+                        </Border>
+                        <TextBlock Style="{StaticResource textBlock1}" Text="DATA"/>
+                    </StackPanel>
+                    <StackPanel Grid.Row="1">
+                        <TextBlock Style="{StaticResource textBlock2}" Text="Main"/>
+                        <RadioButton GroupName="menu_radio" Style="{DynamicResource buttonStyle1}" Command="{Binding HomeCommand}">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="30" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <Icon:PackIconMaterial 
+                                    Kind="Home" 
+                                    Width="18" Height="18" />   
+                                <TextBlock Grid.Column="1" Text="Dashboard" />
+                            </Grid>
+                        </RadioButton>
+                        <RadioButton GroupName="menu_radio" Style="{DynamicResource buttonStyle1}" Command="{Binding AuthorCommand}">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="30" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <Icon:PackIconMaterial 
+                                Kind="Pen" 
+                                Width="18" Height="18" />
+                                <TextBlock Grid.Column="1" Text="Author" />
+                            </Grid>
+                        </RadioButton>
+                        <RadioButton GroupName="menu_radio"   Style="{DynamicResource buttonStyle1}" Command="{Binding BookGenreCommand}">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="30" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <Icon:PackIconMaterial 
+                                    Kind="Typewriter" 
+                                    Width="18" Height="18" />
+                                <TextBlock Grid.Column="1" Text="Book Genre" />
+                            </Grid>
+                        </RadioButton>
+                        <RadioButton GroupName="menu_radio"  Style="{DynamicResource buttonStyle1}" Command="{Binding BookPublisherCommand}">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="30" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <Icon:PackIconMaterial 
+                                    Kind="Publish" 
+                                    Width="18" Height="18" />
+                                <TextBlock Grid.Column="1" Text="Book Publisher" />
+                            </Grid>
+                        </RadioButton>
+                        <RadioButton GroupName="menu_radio"  Style="{DynamicResource buttonStyle1}" Command="{Binding SupplierCommand}">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="30" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <Icon:PackIconMaterial 
+                                    Kind="StairsUp" 
+                                    Width="18" Height="18" />       
+                                <TextBlock Grid.Column="1" Text="Supplier" />
+                            </Grid>
+                        </RadioButton>
+                        <RadioButton GroupName="menu_radio"   Style="{DynamicResource buttonStyle1}" Command="{Binding BookCommand}">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="30" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <Icon:PackIconMaterial 
+                                    Kind="Book" 
+                                    Width="18" Height="18" />       
+                                <TextBlock Grid.Column="1" Text="Book" />
+                            </Grid>
+                        </RadioButton>
+                        <RadioButton GroupName="menu_radio"   Style="{DynamicResource buttonStyle1}" Command="{Binding DeliveryNoteCommand}">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="30" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <Icon:PackIconMaterial 
+                                    Kind="Note" 
+                                    Width="18" Height="18" />
+                                <TextBlock Grid.Column="1" Text="Delivery Note" />
+                            </Grid>
+                        </RadioButton>
+                        <RadioButton GroupName="menu_radio"   Style="{DynamicResource buttonStyle1}" Command="{Binding EmployeeCommand}">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="30" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <Icon:PackIconMaterial 
+                                  Kind="Account" 
+                                  Width="18" Height="18" />
+                                <TextBlock Grid.Column="1" Text="Employee" />
+                            </Grid>
+                        </RadioButton>
+                        <RadioButton GroupName="menu_radio"  Style="{DynamicResource buttonStyle1}" Command="{Binding EmployeeRoleCommand}">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="30" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <Icon:PackIconMaterial 
+                                   Kind="Ruler" 
+                                   Width="18" Height="18" />        
+                                <TextBlock Grid.Column="1" Text="Role" />
+                            </Grid>
+                        </RadioButton>
+                    </StackPanel>
+                </Grid>
+            </Border>
+        </StackPanel>
+        <StackPanel Style="{StaticResource stackPanelMain2}">
+            <ContentControl x:Name="Pages" Content="{Binding CurrentView}" />
+        </StackPanel>
+    </Grid>
+</Window>

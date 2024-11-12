@@ -1,0 +1,35 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:vm="clr-namespace:BookManagement.ViewModel"
+                    xmlns:view="clr-namespace:BookManagement.View"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <DataTemplate DataType="{x:Type vm:HomeViewModel}">
+        <view:HomeView />
+    </DataTemplate>
+    
+    <DataTemplate DataType="{x:Type vm:AuthorViewModel}">
+        <view:AuthorView />
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:BookViewModel}">
+        <view:BookView />
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:BookGenreViewModel}">
+        <view:BookGenreView />
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:BookPublisherViewModel}">
+        <view:BookPublisherView />
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:DeliveryNoteViewModel}">
+        <view:DeliveryNoteView />
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:EmployeeViewModel}">
+        <view:EmployeeView />
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:EmployeeRoleViewModel}">
+        <view:EmployeeRoleView />
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:SupplierViewModel}">
+        <view:SupplierView />
+    </DataTemplate>
+    
+</ResourceDictionary>

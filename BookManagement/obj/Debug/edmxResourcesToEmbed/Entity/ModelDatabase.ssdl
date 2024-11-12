@@ -1,0 +1,208 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="WAREHOUSEBOOKModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Author">
+    <Key>
+      <PropertyRef Name="Authorcode" />
+    </Key>
+    <Property Name="Authorcode" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="AuthorName" Type="nvarchar" MaxLength="256" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Book">
+    <Key>
+      <PropertyRef Name="Bookcode" />
+    </Key>
+    <Property Name="Bookcode" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="BookName" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="BookGenrecode" Type="uniqueidentifier" />
+    <Property Name="Suppliercode" Type="uniqueidentifier" />
+    <Property Name="Authorcode" Type="uniqueidentifier" />
+    <Property Name="BookPublishercode" Type="uniqueidentifier" />
+    <Property Name="Quanity" Type="int" />
+    <Property Name="YearOfPublication" Type="int" />
+    <Property Name="ImageUrl" Type="varchar" MaxLength="750" />
+  </EntityType>
+  <EntityType Name="BookGenre">
+    <Key>
+      <PropertyRef Name="BookGenrecode" />
+    </Key>
+    <Property Name="BookGenrecode" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="BookGenreName" Type="nvarchar" MaxLength="256" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BookPublisher">
+    <Key>
+      <PropertyRef Name="BookPublishercode" />
+    </Key>
+    <Property Name="BookPublishercode" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="BookPublisherName" Type="nvarchar" MaxLength="256" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DeliveryNote">
+    <Key>
+      <PropertyRef Name="DeliveryNotecode" />
+    </Key>
+    <Property Name="DeliveryNotecode" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Employeecode" Type="uniqueidentifier" />
+    <Property Name="Bookcode" Type="uniqueidentifier" />
+    <Property Name="Quanity" Type="int" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="UnitPrice" Type="numeric" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="Employeecode" />
+    </Key>
+    <Property Name="Employeecode" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="EmployeeName" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="Sex" Type="bit" />
+    <Property Name="Position" Type="nvarchar" MaxLength="256" />
+    <Property Name="PhoneNumber" Type="varchar" MaxLength="11" />
+  </EntityType>
+  <EntityType Name="EmployeeRole">
+    <Key>
+      <PropertyRef Name="EmployeeRolecode" />
+    </Key>
+    <Property Name="EmployeeRolecode" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="EmployeeRoleName" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="Employeecode" Type="uniqueidentifier" />
+    <Property Name="EmployeeStatus" Type="bit" />
+  </EntityType>
+  <EntityType Name="Supplier">
+    <Key>
+      <PropertyRef Name="Suppliercode" />
+    </Key>
+    <Property Name="Suppliercode" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="SupplierName" Type="nvarchar" MaxLength="256" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <Association Name="fk_Authorcode">
+    <End Role="Author" Type="Self.Author" Multiplicity="0..1" />
+    <End Role="Book" Type="Self.Book" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Author">
+        <PropertyRef Name="Authorcode" />
+      </Principal>
+      <Dependent Role="Book">
+        <PropertyRef Name="Authorcode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Bookcode">
+    <End Role="Book" Type="Self.Book" Multiplicity="0..1" />
+    <End Role="DeliveryNote" Type="Self.DeliveryNote" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Book">
+        <PropertyRef Name="Bookcode" />
+      </Principal>
+      <Dependent Role="DeliveryNote">
+        <PropertyRef Name="Bookcode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_BookGenrecode">
+    <End Role="BookGenre" Type="Self.BookGenre" Multiplicity="0..1" />
+    <End Role="Book" Type="Self.Book" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BookGenre">
+        <PropertyRef Name="BookGenrecode" />
+      </Principal>
+      <Dependent Role="Book">
+        <PropertyRef Name="BookGenrecode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_BookPublishercode">
+    <End Role="BookPublisher" Type="Self.BookPublisher" Multiplicity="0..1" />
+    <End Role="Book" Type="Self.Book" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BookPublisher">
+        <PropertyRef Name="BookPublishercode" />
+      </Principal>
+      <Dependent Role="Book">
+        <PropertyRef Name="BookPublishercode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Employeecode">
+    <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
+    <End Role="DeliveryNote" Type="Self.DeliveryNote" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="Employeecode" />
+      </Principal>
+      <Dependent Role="DeliveryNote">
+        <PropertyRef Name="Employeecode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_EmployeeRolecode">
+    <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
+    <End Role="EmployeeRole" Type="Self.EmployeeRole" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="Employeecode" />
+      </Principal>
+      <Dependent Role="EmployeeRole">
+        <PropertyRef Name="Employeecode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Suppliercode">
+    <End Role="Supplier" Type="Self.Supplier" Multiplicity="0..1" />
+    <End Role="Book" Type="Self.Book" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Supplier">
+        <PropertyRef Name="Suppliercode" />
+      </Principal>
+      <Dependent Role="Book">
+        <PropertyRef Name="Suppliercode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="WAREHOUSEBOOKModelStoreContainer">
+    <EntitySet Name="Author" EntityType="Self.Author" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Book" EntityType="Self.Book" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BookGenre" EntityType="Self.BookGenre" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BookPublisher" EntityType="Self.BookPublisher" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DeliveryNote" EntityType="Self.DeliveryNote" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Employee" EntityType="Self.Employee" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EmployeeRole" EntityType="Self.EmployeeRole" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Supplier" EntityType="Self.Supplier" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="fk_Authorcode" Association="Self.fk_Authorcode">
+      <End Role="Author" EntitySet="Author" />
+      <End Role="Book" EntitySet="Book" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Bookcode" Association="Self.fk_Bookcode">
+      <End Role="Book" EntitySet="Book" />
+      <End Role="DeliveryNote" EntitySet="DeliveryNote" />
+    </AssociationSet>
+    <AssociationSet Name="fk_BookGenrecode" Association="Self.fk_BookGenrecode">
+      <End Role="BookGenre" EntitySet="BookGenre" />
+      <End Role="Book" EntitySet="Book" />
+    </AssociationSet>
+    <AssociationSet Name="fk_BookPublishercode" Association="Self.fk_BookPublishercode">
+      <End Role="BookPublisher" EntitySet="BookPublisher" />
+      <End Role="Book" EntitySet="Book" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Employeecode" Association="Self.fk_Employeecode">
+      <End Role="Employee" EntitySet="Employee" />
+      <End Role="DeliveryNote" EntitySet="DeliveryNote" />
+    </AssociationSet>
+    <AssociationSet Name="fk_EmployeeRolecode" Association="Self.fk_EmployeeRolecode">
+      <End Role="Employee" EntitySet="Employee" />
+      <End Role="EmployeeRole" EntitySet="EmployeeRole" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Suppliercode" Association="Self.fk_Suppliercode">
+      <End Role="Supplier" EntitySet="Supplier" />
+      <End Role="Book" EntitySet="Book" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

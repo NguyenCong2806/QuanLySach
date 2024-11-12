@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="522f7e544ccf49e4b6c139f443a8f429" Name="Diagram1">
+        <EntityTypeShape EntityType="WAREHOUSEBOOKModel.Author" Width="1.5" PointX="0.75" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="WAREHOUSEBOOKModel.Book" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="WAREHOUSEBOOKModel.BookGenre" Width="1.5" PointX="0.75" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="WAREHOUSEBOOKModel.BookPublisher" Width="1.5" PointX="0.75" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="WAREHOUSEBOOKModel.DeliveryNote" Width="1.5" PointX="5.25" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="WAREHOUSEBOOKModel.Employee" Width="1.5" PointX="3" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="WAREHOUSEBOOKModel.EmployeeRole" Width="1.5" PointX="5.25" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="WAREHOUSEBOOKModel.Supplier" Width="1.5" PointX="0.75" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="WAREHOUSEBOOKModel.sysdiagram" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="WAREHOUSEBOOKModel.fk_Authorcode" ManuallyRouted="false" />
+        <AssociationConnector Association="WAREHOUSEBOOKModel.fk_Bookcode" ManuallyRouted="false" />
+        <AssociationConnector Association="WAREHOUSEBOOKModel.fk_BookGenrecode" ManuallyRouted="false" />
+        <AssociationConnector Association="WAREHOUSEBOOKModel.fk_BookPublishercode" ManuallyRouted="false" />
+        <AssociationConnector Association="WAREHOUSEBOOKModel.fk_Suppliercode" ManuallyRouted="false" />
+        <AssociationConnector Association="WAREHOUSEBOOKModel.fk_Employeecode" ManuallyRouted="false" />
+        <AssociationConnector Association="WAREHOUSEBOOKModel.fk_EmployeeRolecode" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
