@@ -9,7 +9,7 @@
 
     <Style x:Key="stackPanelMain2" TargetType="{x:Type StackPanel}">
         <Setter Property="Background" Value="#eaeaea" />
-        <Setter Property="Orientation" Value="Horizontal" />
+        <Setter Property="Orientation" Value="Vertical" />
         <Setter Property="Grid.Column" Value="1" />
     </Style>
 
@@ -97,5 +97,31 @@
                 <Setter Property="Foreground" Value="#bc1a01" />
             </Trigger>
         </Style.Triggers>
+    </Style>
+
+    <Style x:Key="buttonClose" TargetType="{x:Type Button}">
+        <Setter Property="Background" Value="#353535"/>
+        <Setter Property="BorderBrush" Value="Transparent"/>
+        <Setter Property="Foreground" Value="#b2002c"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Margin" Value="20 5"/>
+        <Setter Property="Width" Value="28"/>
+        <Setter Property="Height" Value="28"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Background="{TemplateBinding Background}" 
+                            BorderBrush="{TemplateBinding BorderBrush}" 
+                            CornerRadius="50"
+                            BorderThickness="{TemplateBinding BorderThickness}" 
+                            SnapsToDevicePixels="true">
+                        <ContentPresenter />
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
     </Style>
 </ResourceDictionary>

@@ -11,7 +11,7 @@
         AllowsTransparency="True"
         mc:Ignorable="d"
         xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks" xmlns:Menu="clr-namespace:BookManagement.Helpper.Config"
-        Title="MainWindow" Height="700" Width="1000">
+        Title="MainWindow" Height="700" Width="1024">
     <Window.DataContext>
         <vm:MainWindowViewModel/>
     </Window.DataContext>
@@ -20,6 +20,7 @@
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="2.3*" />
         </Grid.ColumnDefinitions>
+        <!--Menu-->
         <StackPanel Style="{StaticResource stackPanelMain1}">
             <Border Style="{StaticResource borderMain}">
                 <Grid>
@@ -51,7 +52,7 @@
                     </StackPanel>
                     <StackPanel Grid.Row="1">
                         <TextBlock Style="{StaticResource textBlock2}" Text="Main"/>
-                        <RadioButton GroupName="menu_radio" Style="{DynamicResource buttonStyle1}" Command="{Binding HomeCommand}">
+                        <RadioButton IsChecked="True" GroupName="menu_radio" Style="{DynamicResource buttonStyle1}" Command="{Binding HomeCommand}">
                             <Grid>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="30" />
@@ -59,7 +60,7 @@
                                 </Grid.ColumnDefinitions>
                                 <Icon:PackIconMaterial 
                                     Kind="Home" 
-                                    Width="18" Height="18" />   
+                                    Width="18" Height="18" />
                                 <TextBlock Grid.Column="1" Text="Dashboard" />
                             </Grid>
                         </RadioButton>
@@ -107,7 +108,7 @@
                                 </Grid.ColumnDefinitions>
                                 <Icon:PackIconMaterial 
                                     Kind="StairsUp" 
-                                    Width="18" Height="18" />       
+                                    Width="18" Height="18" />
                                 <TextBlock Grid.Column="1" Text="Supplier" />
                             </Grid>
                         </RadioButton>
@@ -119,7 +120,7 @@
                                 </Grid.ColumnDefinitions>
                                 <Icon:PackIconMaterial 
                                     Kind="Book" 
-                                    Width="18" Height="18" />       
+                                    Width="18" Height="18" />
                                 <TextBlock Grid.Column="1" Text="Book" />
                             </Grid>
                         </RadioButton>
@@ -155,7 +156,7 @@
                                 </Grid.ColumnDefinitions>
                                 <Icon:PackIconMaterial 
                                    Kind="Ruler" 
-                                   Width="18" Height="18" />        
+                                   Width="18" Height="18" />
                                 <TextBlock Grid.Column="1" Text="Role" />
                             </Grid>
                         </RadioButton>
@@ -163,8 +164,25 @@
                 </Grid>
             </Border>
         </StackPanel>
+        <!--end menu-->
         <StackPanel Style="{StaticResource stackPanelMain2}">
-            <ContentControl x:Name="Pages" Content="{Binding CurrentView}" />
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="15*"/>
+                </Grid.RowDefinitions>
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Right" 
+                            VerticalAlignment="Center"  Grid.Row="0">
+                    <Button Style="{DynamicResource buttonClose}" ToolTip="Tắt ứng dụng" Command="{Binding ShutdownCommand}">
+                        <Icon:PackIconMaterial Width="14" Height="14" 
+                        Kind="Close" 
+                        Foreground="red"  VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    </Button>
+                </StackPanel>
+                <StackPanel Grid.Row="1" Orientation="Horizontal">
+                    <ContentControl x:Name="Pages" Content="{Binding CurrentView}" />
+                </StackPanel>
+            </Grid>
         </StackPanel>
     </Grid>
 </Window>
