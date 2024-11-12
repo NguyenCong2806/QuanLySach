@@ -17,8 +17,8 @@
     </Window.DataContext>
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="2.3*" />
+            <ColumnDefinition Width="0.8*" />
+            <ColumnDefinition Width="3*" />
         </Grid.ColumnDefinitions>
         <!--Menu-->
         <StackPanel Style="{StaticResource stackPanelMain1}">

@@ -32,8 +32,7 @@
     <Style x:Key="borderMain" TargetType="{x:Type Border}">
         <Setter Property="Background" Value="#fb635e" />
         <Setter Property="CornerRadius" Value="15" />
-        <Setter Property="Margin" Value="25 15" />
-        <Setter Property="Width" Value="250" />
+        <Setter Property="Margin" Value="13" />
         <Setter Property="Effect">
             <Setter.Value>
                 <DropShadowEffect ShadowDepth="0" BlurRadius="18" Color="#938f8f" Opacity="0.9" />

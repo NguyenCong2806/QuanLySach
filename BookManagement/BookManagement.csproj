@@ -230,6 +230,8 @@
     </ApplicationDefinition>
     <Compile Include="Common\Extend.cs" />
     <Compile Include="Common\Notice.cs" />
+    <Compile Include="Data\DataModel.cs" />
+    <Compile Include="Data\Dto\AuthorDto.cs" />
     <Compile Include="Data\Dto\BookGenreDto.cs" />
     <Compile Include="Data\PagedList.cs" />
     <Compile Include="Data\ResultData.cs" />
@@ -237,15 +239,20 @@
     <Compile Include="Helpper\Config\Btn.cs" />
     <Compile Include="Helpper\Config\InstanceBase.cs" />
     <Compile Include="Helpper\Config\MapperConfig.cs" />
+    <Compile Include="Model\AuthorModel.cs" />
     <Compile Include="Repositorys\Deployment\AsyncCommand.cs" />
+    <Compile Include="Repositorys\Deployment\AuthorRepository.cs" />
     <Compile Include="Repositorys\Deployment\BookGenreRepository.cs" />
     <Compile Include="Repositorys\Deployment\Repository.cs" />
     <Compile Include="Repositorys\Interfaces\IAsyncCommand.cs" />
+    <Compile Include="Repositorys\Interfaces\IAuthorRepository.cs" />
     <Compile Include="Repositorys\Interfaces\IBookGenreRepository.cs" />
     <Compile Include="Repositorys\Interfaces\IErrorHandler.cs" />
     <Compile Include="Repositorys\Interfaces\IRepositorys.cs" />
+    <Compile Include="Service\Deployment\AuthorService.cs" />
     <Compile Include="Service\Deployment\BookGenreService.cs" />
     <Compile Include="Service\Deployment\Service.cs" />
+    <Compile Include="Service\Interfaces\IAuthorService.cs" />
     <Compile Include="Service\Interfaces\IBookGenreService.cs" />
     <Compile Include="Service\Interfaces\IService.cs" />
     <Compile Include="Utilities\AsyncRelayCommand.cs" />
@@ -421,9 +428,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Model\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="Entity\ModelDatabase.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
