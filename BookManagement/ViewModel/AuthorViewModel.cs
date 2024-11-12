@@ -36,11 +36,15 @@ namespace BookManagement.ViewModel
 
             AuthorModel = new AuthorModel();
             _authorService = InstanceBase.AuthorService;
+
+            AuthorModel.Models = new ObservableCollection<AuthorDto>();
+            AuthorModel.Models.Add(new AuthorDto() { Authorcode = Guid.Parse("ef3ea1ff-b3fe-4644-b458-c7cd8f017640"), AuthorName = "Vũ Trọng Linh" });
+            AuthorModel.Models.Add(new AuthorDto() { Authorcode = Guid.Parse("ef3ea1ff-b3fe-4644-b458-c7cd8f017640"), AuthorName = "Vũ Trọng Linh" });
+            AuthorModel.Models.Add(new AuthorDto() { Authorcode = Guid.Parse("ef3ea1ff-b3fe-4644-b458-c7cd8f017640"), AuthorName = "Vũ Trọng Linh" });
         }
 
         private async Task GetAllAsync(string keyWord, int pageNumber)
         {
-            AuthorModel.Models = new ObservableCollection<AuthorDto>();
             PagedList.PageNumber = AuthorModel.PageIndex = pageNumber;
             //Find keyword//
             PagedList.KeyWord = keyWord;

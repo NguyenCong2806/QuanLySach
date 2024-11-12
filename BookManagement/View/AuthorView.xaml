@@ -18,8 +18,22 @@
             <i:InvokeCommandAction Command="{Binding GetDataCommand}"/>
         </i:EventTrigger>
     </i:Interaction.Triggers>
-    
-    <Grid Background="Transparent">
-        <DataGrid ItemsSource="{Binding AuthorModel.Models}"></DataGrid>
+   
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="1" Width="800">
+            <DataGrid RowStyle="{DynamicResource dataGridRowStyle1}" ColumnHeaderStyle="{DynamicResource dataGridColumnHeaderStyle1}" 
+                      CellStyle="{DynamicResource dataGridCellStyle}" 
+                Style="{DynamicResource dataGridStyle}"
+                ItemsSource="{Binding  AuthorModel.Models}">
+                <DataGrid.Columns>
+                    <DataGridTextColumn IsReadOnly="True" Width="auto" Header="Authorcode" Binding="{Binding Authorcode}" />
+                    <DataGridTextColumn IsReadOnly="True" Width="*" Header="AuthorName" Binding="{Binding AuthorName}" />
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
     </Grid>
 </UserControl>
