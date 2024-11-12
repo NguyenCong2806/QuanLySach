@@ -5,12 +5,15 @@ using BookManagement.Entity;
 using BookManagement.Helpper.Config;
 using BookManagement.Model;
 using BookManagement.Service.Interfaces;
+using BookManagement.Utilities;
+using SweetAlertSharp.Enums;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 using System.Web.UI.WebControls;
+using System.Windows.Input;
 
 namespace BookManagement.ViewModel
 {
@@ -33,10 +36,15 @@ namespace BookManagement.ViewModel
 
             AuthorModel = new AuthorModel();
             _authorService = InstanceBase.AuthorService;
+
+            AuthorModel.Models = new ObservableCollection<AuthorDto>();
+            AuthorModel.Models.Add(new AuthorDto() { Authorcode = Guid.Parse("ef3ea1ff-b3fe-4644-b458-c7cd8f017640"), AuthorName = "Vũ Trọng Linh" });
+            AuthorModel.Models.Add(new AuthorDto() { Authorcode = Guid.Parse("ef3ea1ff-b3fe-4644-b458-c7cd8f017640"), AuthorName = "Vũ Trọng Linh" });
+            AuthorModel.Models.Add(new AuthorDto() { Authorcode = Guid.Parse("ef3ea1ff-b3fe-4644-b458-c7cd8f017640"), AuthorName = "Vũ Trọng Linh" });
         }
+
         private async Task GetAllAsync(string keyWord, int pageNumber)
         {
-            AuthorModel.Models = new ObservableCollection<AuthorDto>();
             PagedList.PageNumber = AuthorModel.PageIndex = pageNumber;
             //Find keyword//
             PagedList.KeyWord = keyWord;
@@ -60,24 +68,136 @@ namespace BookManagement.ViewModel
 
             AuthorModel.Models = Extend.ToObservableCollection(data.ListData);
         }
+        #region Command
+        private ICommand _saveCommand;
+
+        public ICommand SaveCommand
+        {
+            get
+            {
+                if (_saveCommand == null)
+                    _saveCommand = new AsyncRelayCommand<Unit>(param => SaveData(), null);
+
+                return _saveCommand;
+            }
+        }
+
+        private ICommand _previousPageCommand;
+
+        public ICommand PreviousPageCommand
+        {
+            get
+            {
+                if (_previousPageCommand == null)
+                    _previousPageCommand = new AsyncRelayCommand<Unit>(param => PreviousPageAsync(), null);
+
+                return _previousPageCommand;
+            }
+        }
+
+        private ICommand _nextPageCommand;
+
+        public ICommand NextPageCommand
+        {
+            get
+            {
+                if (_nextPageCommand == null)
+                    _nextPageCommand = new AsyncRelayCommand<Unit>(param => NextPageAsync(), null);
+
+                return _nextPageCommand;
+            }
+        }
+
+        private ICommand _findDataCommand;
+
+        public ICommand FindDataCommand
+        {
+            get
+            {
+                if (_findDataCommand == null)
+                    _findDataCommand = new AsyncRelayCommand<Unit>(param => FindDataAsync(), null);
+
+                return _findDataCommand;
+            }
+        }
+
+        private ICommand _removeDataCommand;
+
+        public ICommand RemoveDataCommand
+        {
+            get
+            {
+                if (_removeDataCommand == null)
+                    _removeDataCommand = new AsyncRelayCommand<object>(param => RemoveAsync(param), null);
+
+                return _removeDataCommand;
+            }
+        }
+        private ICommand _getAllData;
+        public ICommand GetDataCommand
+        {
+            get
+            {
+                if (_getAllData == null)
+                    _getAllData = new AsyncRelayCommand<object>(param => GetAll(), null);
+
+                return _getAllData;
+            }
+        }
+        #endregion
+        private async Task GetAll()
+        {
+            PagedList.PageNumber = 1;
+            await GetAllAsync(string.Empty, PagedList.PageNumber);
+        }
 
         private async Task SaveData()
         {
-            if (AuthorModel <= 0)
+            if (AuthorModel.Model.Authorcode == Guid.Empty)
             {
-                await _unitrepository.AddUnit(Unitview.Units);
-                Extend.Notification(Notice.ADDSUCCESS, Notice.OFFSETX, Notice.OFFSETY, Notice.OK);
+                await _authorService.AddAsync(AuthorModel.Model);
             }
             else
             {
-                await _unitrepository.UpdateUnit(Unitview.Units);
-                Extend.Notification(Notice.EDITSUCCESS, Notice.OFFSETX, Notice.OFFSETY, Notice.OK);
+                await _authorService.UpdateAsync(AuthorModel.Model);
             }
 
             await GetAllAsync(string.Empty, PagedList.PageNumber);
-            Unitview.Units = new Unit();
+            AuthorModel.Model = new AuthorDto();
         }
 
+        private async Task NextPageAsync()
+        {
+            await GetAllAsync(string.Empty, PagedList.PageNumber + 1);
+        }
 
+        private async Task PreviousPageAsync()
+        {
+            await GetAllAsync(string.Empty, PagedList.PageNumber - 1);
+        }
+        private async Task FindDataAsync()
+        {
+            if (!string.IsNullOrEmpty(AuthorModel.Model.AuthorName))
+            {
+                await GetAllAsync(AuthorModel.Model.AuthorName, PagedList.PageNumber);
+            }
+            else
+            {
+                PagedList.KeyFind = new List<Expression<Func<Author, bool>>>();
+                await GetAllAsync(string.Empty, PagedList.PageNumber);
+            }
+        }
+        /// <summary>
+        /// Remove data unit
+        /// </summary>
+        /// <param name="id"></param>
+        private async Task RemoveAsync(object o)
+        {
+            var item = o as AuthorDto;
+
+            if (item != null) {
+                await _authorService.DeleteAsync(x=>x.Authorcode==item.Authorcode);
+            }
+        }
     }
 }

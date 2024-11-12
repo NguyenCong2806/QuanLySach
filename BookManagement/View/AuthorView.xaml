@@ -4,9 +4,36 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:BookManagement.View"
+             xmlns:i = "http://schemas.microsoft.com/expression/2010/interactivity" 
+             xmlns:ei = "http://schemas.microsoft.com/expression/2010/interactions" 
              mc:Ignorable="d" 
+             xmlns:authorvm="clr-namespace:BookManagement.ViewModel"
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid Background="Beige">
-        <TextBlock Text="Author" FontSize="65"/>
+    <UserControl.DataContext>
+        <authorvm:AuthorViewModel/>
+    </UserControl.DataContext>
+    
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Loaded">
+            <i:InvokeCommandAction Command="{Binding GetDataCommand}"/>
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+   
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="1" Width="800">
+            <DataGrid RowStyle="{DynamicResource dataGridRowStyle1}" ColumnHeaderStyle="{DynamicResource dataGridColumnHeaderStyle1}" 
+                      CellStyle="{DynamicResource dataGridCellStyle}" 
+                Style="{DynamicResource dataGridStyle}"
+                ItemsSource="{Binding  AuthorModel.Models}">
+                <DataGrid.Columns>
+                    <DataGridTextColumn IsReadOnly="True" Width="auto" Header="Authorcode" Binding="{Binding Authorcode}" />
+                    <DataGridTextColumn IsReadOnly="True" Width="*" Header="AuthorName" Binding="{Binding AuthorName}" />
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
     </Grid>
 </UserControl>
