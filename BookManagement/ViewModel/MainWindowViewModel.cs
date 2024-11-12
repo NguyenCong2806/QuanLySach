@@ -1,8 +1,10 @@
-﻿using BookManagement.Data.Dto;
+﻿using BookManagement.Common;
+using BookManagement.Data.Dto;
 using BookManagement.Entity;
 using BookManagement.Helpper.Config;
 using BookManagement.Service.Interfaces;
 using BookManagement.Utilities;
+using SweetAlertSharp.Enums;
 using System;
 using System.Data.Entity.Core.Objects;
 using System.Threading.Tasks;
@@ -106,7 +108,14 @@ namespace BookManagement.ViewModel
 
         private async Task Shutdown(object obj)
         {
-            Application.Current.Shutdown();
+            if (Extend.SweetAlertResults(Notice.ALERTCAPTIONCLOSE, Notice.ALERTMESSAGECLOSE, Notice.OKTEXT, Notice.CANCELTEXT, SweetAlertButton.OKCancel))
+            {
+                Application.Current.Shutdown();
+            }
+            else
+            {
+                return;
+            }
             await Task.Yield();
         }
         public bool Isloaded { get; set; } = false;

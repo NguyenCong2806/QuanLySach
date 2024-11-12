@@ -13,6 +13,9 @@
 
         public const string ALERTCAPTION = "Bạn chắc chắn muốn xóa dữ liệu này!";
         public const string ALERTMESSAGE = "Hãy cân nhắc trước khi xóa";
+
+        public const string ALERTCAPTIONCLOSE = "Bạn chắc chắn muốn tắt ứng dụng!";
+        public const string ALERTMESSAGECLOSE = "Hãy cân nhắc trước khi dừng hẳn ứng dụng!";
         public const string OKTEXT = "Có";
         public const string CANCELTEXT = "Không";
 
