@@ -35,11 +35,9 @@ namespace BookManagement.Data.Dto
         {
             ClearErrors(nameof(BookGenreName));
             if (string.IsNullOrEmpty(BookGenreName))
-                AddError(nameof(BookGenreName), "Username cannot be empty.");
-            if (string.Equals(BookGenreName, "Admin", StringComparison.OrdinalIgnoreCase))
-                AddError(nameof(BookGenreName), "Admin is not valid username.");
-            if (BookGenreName == null || BookGenreName?.Length <= 5)
-                AddError(nameof(BookGenreName), "Username must be at least 6 characters long.");
+                AddError(nameof(BookGenreName), "Không được bỏ trống!");
+            if (BookGenreName?.Length > 256)
+                AddError(nameof(BookGenreName), "Vượt quá 256 ký tự!");
         }
     }
 }

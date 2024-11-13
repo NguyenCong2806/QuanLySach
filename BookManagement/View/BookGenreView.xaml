@@ -4,9 +4,152 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:BookManagement.View"
-             mc:Ignorable="d" 
+            xmlns:i = "http://schemas.microsoft.com/expression/2010/interactivity" 
+            xmlns:ei = "http://schemas.microsoft.com/expression/2010/interactions" 
+            mc:Ignorable="d" 
+            xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
+            xmlns:bookgenrevm="clr-namespace:BookManagement.ViewModel"
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid Background="Beige">
-        <TextBlock Text="BookGenre" FontSize="65"/>
+    <UserControl.DataContext>
+        <bookgenrevm:BookGenreViewModel/>
+    </UserControl.DataContext>
+
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Loaded">
+            <i:InvokeCommandAction Command="{Binding GetDataCommand}"/>
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+
+    <Grid Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.35*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="0.15*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Margin="20,20,20,20"  Orientation="Vertical" Grid.Row="0">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <StackPanel Margin="0 0 20 0" Grid.Column="0" Orientation="Vertical">
+                    <Label Style="{DynamicResource labelStyle1}" Content="BookGenre Name"/>
+                    <TextBox Style="{DynamicResource textBoxStyle1}" Text="{Binding BookGenreModel.Model.BookGenreName,Mode=TwoWay, ValidatesOnNotifyDataErrors=True}">
+                        <Validation.ErrorTemplate>
+                            <ControlTemplate>
+                                <StackPanel>
+                                    <AdornedElementPlaceholder x:Name="textBox" />
+                                    <ItemsControl ItemsSource="{Binding}">
+                                        <ItemsControl.ItemTemplate>
+                                            <DataTemplate>
+                                                <TextBlock Text="{Binding ErrorContent}" Foreground="Red" />
+                                            </DataTemplate>
+                                        </ItemsControl.ItemTemplate>
+                                    </ItemsControl>
+                                </StackPanel>
+                            </ControlTemplate>
+                        </Validation.ErrorTemplate>
+                    </TextBox>
+                </StackPanel>
+                <WrapPanel HorizontalAlignment="Left" VerticalAlignment="Bottom" Grid.Column="1" Orientation="Horizontal">
+                    <Button ToolTip="Search" Style="{DynamicResource buttonStyleSearch}" 
+                    Command="{Binding FindDataCommand}">
+                        <Icon:PackIconMaterial Width="15" Height="15" 
+                        Kind="SearchWeb"  
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Foreground="#ffffff"/>
+                    </Button>
+                    <Button ToolTip="Save" Style="{DynamicResource buttonStyleSave}" 
+                        Command="{Binding SaveCommand}">
+                        <Icon:PackIconMaterial Width="15" Height="15" 
+                    Kind="Download"  
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Foreground="#ffffff"/>
+                    </Button>
+                    <Button ToolTip="Refresh" Style="{DynamicResource buttonStyleClear}" 
+                        Command="{Binding ResetCommand}">
+                        <Icon:PackIconMaterial Width="15" Height="15" 
+                    Kind="Refresh"  
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Foreground="#ffffff"/>
+                    </Button>
+                </WrapPanel>
+            </Grid>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Width="800" Height="470">
+            <DataGrid RowStyle="{DynamicResource dataGridRowStyle1}" ColumnHeaderStyle="{DynamicResource dataGridColumnHeaderStyle1}" 
+                  CellStyle="{DynamicResource dataGridCellStyle}" 
+                Style="{DynamicResource dataGridStyle}"
+                ItemsSource="{Binding  BookGenreModel.Models}" SelectionChanged="DataGrid_SelectionChanged"
+                   x:Name="dataview"
+                  >
+                <DataGrid.Columns>
+                    <DataGridTextColumn IsReadOnly="True" Width="auto" Header="BookGenrecode" Binding="{Binding BookGenrecode}" />
+                    <DataGridTextColumn IsReadOnly="True" Width="*" Header="BookGenreName" Binding="{Binding BookGenreName}" />
+                    <DataGridTemplateColumn IsReadOnly="True" Width="auto" Header="Operations">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <Button Style="{StaticResource buttongridedit}" ToolTip="Edit"
+                                        Command="{Binding DataContext.GetSingleCommand, ElementName=dataview}" 
+                                        CommandParameter="{Binding SelectedItems, ElementName=dataview}">
+                                        <Icon:PackIconMaterial Width="15" Height="15" 
+                                        Kind="PencilOutline"  
+                                        HorizontalAlignment="Center"
+                                        VerticalAlignment="Center"
+                                        Foreground="#ffffff"/>
+                                    </Button>
+                                    <Button Style="{StaticResource buttongridremove}" ToolTip="Remove"
+                                        Command="{Binding DataContext.RemoveDataCommand, ElementName=dataview}" 
+                                         CommandParameter="{Binding SelectedItems, ElementName=dataview}">
+                                        <Icon:PackIconMaterial Width="15" Height="15" 
+                                        Kind="Delete"  
+                                        HorizontalAlignment="Center"
+                                        VerticalAlignment="Center"
+                                        Foreground="#ffffff"/>
+                                    </Button>
+                                </StackPanel>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
+        <WrapPanel Orientation="Horizontal" Grid.Row="2" 
+               Margin="0 6"
+               HorizontalAlignment="Right" VerticalAlignment="Center">
+            <WrapPanel Orientation="Horizontal">
+                <WrapPanel Margin="0 0 20 0" HorizontalAlignment="Left" VerticalAlignment="Center">
+                    <TextBlock  FontWeight="Bold" FontSize="14" Text="Page: " />
+                    <TextBlock FontWeight="Bold" FontSize="14"  Text="{Binding BookGenreModel.PageIndex}" />
+                    <TextBlock  FontWeight="Thin" FontSize="14" Text=" | " />
+                    <TextBlock  FontWeight="Bold" FontSize="14" Text=" TotalPage: " />
+                    <TextBlock FontWeight="Bold" FontSize="14"  Text="{Binding BookGenreModel.PageSize}" />
+                </WrapPanel>
+                <Button Style="{DynamicResource buttonStyleNext}"
+                    IsEnabled="{Binding BookGenreModel.IsEnablePrevious}"
+                    Command="{Binding PreviousPageCommand}"
+                    >
+                    <Icon:PackIconMaterial Width="15" Height="15" 
+                 Kind="PagePrevious"  
+                 HorizontalAlignment="Center"
+                 VerticalAlignment="Center"
+                 Foreground="#ffffff"/>
+                </Button>
+                <Button Style="{DynamicResource buttonStyleNext}"
+                    Command="{Binding NextPageCommand}"
+                    IsEnabled="{Binding BookGenreModel.IsEnableNext}"
+                    >
+                    <Icon:PackIconMaterial Width="15" Height="15" 
+                 Kind="PageNext"  
+                 HorizontalAlignment="Center"
+                 VerticalAlignment="Center"
+                 Foreground="#ffffff"/>
+                </Button>
+            </WrapPanel>
+        </WrapPanel>
     </Grid>
 </UserControl>

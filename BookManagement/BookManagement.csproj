@@ -241,6 +241,7 @@
     <Compile Include="Helpper\Config\InstanceBase.cs" />
     <Compile Include="Helpper\Config\MapperConfig.cs" />
     <Compile Include="Model\AuthorModel.cs" />
+    <Compile Include="Model\BookGenreModel.cs" />
     <Compile Include="Repositorys\Deployment\AsyncCommand.cs" />
     <Compile Include="Repositorys\Deployment\AuthorRepository.cs" />
     <Compile Include="Repositorys\Deployment\BookGenreRepository.cs" />
