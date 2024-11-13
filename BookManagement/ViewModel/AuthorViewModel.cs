@@ -10,6 +10,7 @@ using SweetAlertSharp.Enums;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 using System.Web.UI.WebControls;
@@ -36,11 +37,6 @@ namespace BookManagement.ViewModel
 
             AuthorModel = new AuthorModel();
             _authorService = InstanceBase.AuthorService;
-
-            AuthorModel.Models = new ObservableCollection<AuthorDto>();
-            AuthorModel.Models.Add(new AuthorDto() { Authorcode = Guid.Parse("ef3ea1ff-b3fe-4644-b458-c7cd8f017640"), AuthorName = "Vũ Trọng Linh" });
-            AuthorModel.Models.Add(new AuthorDto() { Authorcode = Guid.Parse("ef3ea1ff-b3fe-4644-b458-c7cd8f017640"), AuthorName = "Vũ Trọng Linh" });
-            AuthorModel.Models.Add(new AuthorDto() { Authorcode = Guid.Parse("ef3ea1ff-b3fe-4644-b458-c7cd8f017640"), AuthorName = "Vũ Trọng Linh" });
         }
 
         private async Task GetAllAsync(string keyWord, int pageNumber)
@@ -191,13 +187,21 @@ namespace BookManagement.ViewModel
         /// Remove data unit
         /// </summary>
         /// <param name="id"></param>
-        private async Task RemoveAsync(object o)
+        private async Task RemoveAsync(object value)
         {
-            var item = o as AuthorDto;
-
-            if (item != null) {
-                await _authorService.DeleteAsync(x=>x.Authorcode==item.Authorcode);
+            
+            var items = value as System.Collections.IList;
+            var authorList = items.Cast<AuthorDto>()?.ToList();
+            if (authorList != null)
+            {
+                foreach (var item in authorList)
+                {
+                    await _authorService.DeleteAsync(x => x.Authorcode == item.Authorcode);
+                }
             }
+            
         }
+
+       
     }
 }
