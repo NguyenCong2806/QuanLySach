@@ -7,6 +7,7 @@
              xmlns:i = "http://schemas.microsoft.com/expression/2010/interactivity" 
              xmlns:ei = "http://schemas.microsoft.com/expression/2010/interactions" 
              mc:Ignorable="d" 
+             xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
              xmlns:authorvm="clr-namespace:BookManagement.ViewModel"
              d:DesignHeight="450" d:DesignWidth="800">
     <UserControl.DataContext>
@@ -27,11 +28,38 @@
         <StackPanel Grid.Row="1" Width="800">
             <DataGrid RowStyle="{DynamicResource dataGridRowStyle1}" ColumnHeaderStyle="{DynamicResource dataGridColumnHeaderStyle1}" 
                       CellStyle="{DynamicResource dataGridCellStyle}" 
-                Style="{DynamicResource dataGridStyle}"
-                ItemsSource="{Binding  AuthorModel.Models}">
+                    Style="{DynamicResource dataGridStyle}"
+                    ItemsSource="{Binding  AuthorModel.Models}" SelectionChanged="DataGrid_SelectionChanged"
+                       x:Name="dataview"
+                      >
                 <DataGrid.Columns>
                     <DataGridTextColumn IsReadOnly="True" Width="auto" Header="Authorcode" Binding="{Binding Authorcode}" />
                     <DataGridTextColumn IsReadOnly="True" Width="*" Header="AuthorName" Binding="{Binding AuthorName}" />
+                    <DataGridTemplateColumn IsReadOnly="True" Width="auto" Header="Operations">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <Button Style="{StaticResource buttongridedit}" ToolTip="Edit"
+                                            >
+                                        <Icon:PackIconMaterial Width="15" Height="15" 
+                                            Kind="PencilOutline"  
+                                            HorizontalAlignment="Center"
+                                            VerticalAlignment="Center"
+                                            Foreground="#ffffff"/>  
+                                    </Button>
+                                    <Button Style="{StaticResource buttongridremove}" ToolTip="Remove"
+                                            Command="{Binding DataContext.RemoveDataCommand, ElementName=dataview}" 
+                                             CommandParameter="{Binding SelectedItems, ElementName=dataview}">
+                                    <Icon:PackIconMaterial Width="15" Height="15" 
+                                            Kind="Delete"  
+                                            HorizontalAlignment="Center"
+                                            VerticalAlignment="Center"
+                                            Foreground="#ffffff"/>
+                                    </Button>
+                                </StackPanel>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
                 </DataGrid.Columns>
             </DataGrid>
         </StackPanel>
