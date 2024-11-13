@@ -13,37 +13,73 @@
     <UserControl.DataContext>
         <authorvm:AuthorViewModel/>
     </UserControl.DataContext>
-    
+
     <i:Interaction.Triggers>
         <i:EventTrigger EventName="Loaded">
             <i:InvokeCommandAction Command="{Binding GetDataCommand}"/>
         </i:EventTrigger>
     </i:Interaction.Triggers>
-   
-    <Grid Background="#ffff">
+    
+    <Grid Background="Transparent">
         <Grid.RowDefinitions>
-            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="0.35*"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="0.15*"/>
         </Grid.RowDefinitions>
-        <StackPanel Orientation="Vertical" Grid.Row="0" Width="800">
+        <StackPanel Margin="20,20,20,20"  Orientation="Vertical" Grid.Row="0">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="2*"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <StackPanel Grid.Column="0" Orientation="Vertical">
-                    <Label Content="Author Name"/>
-                    <TextBox Text="{Binding AuthorModel.Model.AuthorName,Mode=TwoWay}"/>
+                <StackPanel Margin="0 0 20 0" Grid.Column="0" Orientation="Vertical">
+                    <Label Style="{DynamicResource labelStyle1}" Content="Author Name"/>
+                    <TextBox Style="{DynamicResource textBoxStyle1}" Text="{Binding AuthorModel.Model.AuthorName,Mode=TwoWay, ValidatesOnNotifyDataErrors=True}">
+                        <Validation.ErrorTemplate>
+                            <ControlTemplate>
+                                <StackPanel>
+                                    <AdornedElementPlaceholder x:Name="textBox" />
+                                    <ItemsControl ItemsSource="{Binding}">
+                                        <ItemsControl.ItemTemplate>
+                                            <DataTemplate>
+                                                <TextBlock Text="{Binding ErrorContent}" Foreground="Red" />
+                                            </DataTemplate>
+                                        </ItemsControl.ItemTemplate>
+                                    </ItemsControl>
+                                </StackPanel>
+                            </ControlTemplate>
+                        </Validation.ErrorTemplate>
+                    </TextBox>
                 </StackPanel>
-                <StackPanel Grid.Column="1" Orientation="Horizontal">
-                    <Button Content="Save" Command="{Binding SaveCommand}">
+                <WrapPanel HorizontalAlignment="Left" VerticalAlignment="Bottom" Grid.Column="1" Orientation="Horizontal">
+                    <Button ToolTip="Search" Style="{DynamicResource buttonStyleSearch}" 
+                        Command="{Binding FindDataCommand}">
+                        <Icon:PackIconMaterial Width="15" Height="15" 
+                            Kind="SearchWeb"  
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Foreground="#ffffff"/>  
                     </Button>
-                    <Button Content="Clear">
+                    <Button ToolTip="Save" Style="{DynamicResource buttonStyleSave}" 
+                            Command="{Binding SaveCommand}">
+                        <Icon:PackIconMaterial Width="15" Height="15" 
+                        Kind="Download"  
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Foreground="#ffffff"/>  
                     </Button>
-                </StackPanel>
+                    <Button ToolTip="Refresh" Style="{DynamicResource buttonStyleClear}" 
+                            Command="{Binding ResetCommand}">
+                        <Icon:PackIconMaterial Width="15" Height="15" 
+                        Kind="Refresh"  
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Foreground="#ffffff"/>
+                    </Button>
+                </WrapPanel>
             </Grid>
         </StackPanel>
-        <StackPanel Grid.Row="1" Width="800">
+        <StackPanel Grid.Row="1" Width="800" Height="470">
             <DataGrid RowStyle="{DynamicResource dataGridRowStyle1}" ColumnHeaderStyle="{DynamicResource dataGridColumnHeaderStyle1}" 
                       CellStyle="{DynamicResource dataGridCellStyle}" 
                     Style="{DynamicResource dataGridStyle}"
@@ -64,12 +100,12 @@
                                             Kind="PencilOutline"  
                                             HorizontalAlignment="Center"
                                             VerticalAlignment="Center"
-                                            Foreground="#ffffff"/>  
+                                            Foreground="#ffffff"/>
                                     </Button>
                                     <Button Style="{StaticResource buttongridremove}" ToolTip="Remove"
                                             Command="{Binding DataContext.RemoveDataCommand, ElementName=dataview}" 
                                              CommandParameter="{Binding SelectedItems, ElementName=dataview}">
-                                    <Icon:PackIconMaterial Width="15" Height="15" 
+                                        <Icon:PackIconMaterial Width="15" Height="15" 
                                             Kind="Delete"  
                                             HorizontalAlignment="Center"
                                             VerticalAlignment="Center"
@@ -82,5 +118,38 @@
                 </DataGrid.Columns>
             </DataGrid>
         </StackPanel>
+        <WrapPanel Orientation="Horizontal" Grid.Row="2" 
+                   Margin="0 6"
+                   HorizontalAlignment="Right" VerticalAlignment="Center">
+            <WrapPanel Orientation="Horizontal">
+                <WrapPanel Margin="0 0 20 0" HorizontalAlignment="Left" VerticalAlignment="Center">
+                    <TextBlock  FontWeight="Bold" FontSize="14" Text="Page: " />
+                    <TextBlock FontWeight="Bold" FontSize="14"  Text="{Binding AuthorModel.PageIndex}" />
+                    <TextBlock  FontWeight="Thin" FontSize="14" Text=" | " />
+                    <TextBlock  FontWeight="Bold" FontSize="14" Text=" TotalPage: " />
+                    <TextBlock FontWeight="Bold" FontSize="14"  Text="{Binding AuthorModel.PageSize}" />
+                </WrapPanel>
+                <Button Style="{DynamicResource buttonStyleNext}"
+                        IsEnabled="{Binding AuthorModel.IsEnablePrevious}"
+                        Command="{Binding PreviousPageCommand}"
+                        >
+                    <Icon:PackIconMaterial Width="15" Height="15" 
+                     Kind="PagePrevious"  
+                     HorizontalAlignment="Center"
+                     VerticalAlignment="Center"
+                     Foreground="#ffffff"/>
+                </Button>
+                <Button Style="{DynamicResource buttonStyleNext}"
+                        Command="{Binding NextPageCommand}"
+                        IsEnabled="{Binding AuthorModel.IsEnableNext}"
+                        >
+                    <Icon:PackIconMaterial Width="15" Height="15" 
+                     Kind="PageNext"  
+                     HorizontalAlignment="Center"
+                     VerticalAlignment="Center"
+                     Foreground="#ffffff"/>
+                </Button>
+            </WrapPanel>
+        </WrapPanel>
     </Grid>
 </UserControl>
