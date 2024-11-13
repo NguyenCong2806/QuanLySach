@@ -72,7 +72,7 @@ namespace BookManagement.ViewModel
             get
             {
                 if (_saveCommand == null)
-                    _saveCommand = new AsyncRelayCommand<Unit>(param => SaveData(), null);
+                    _saveCommand = new AsyncRelayCommand<AuthorDto>(param => SaveData(), null);
 
                 return _saveCommand;
             }
@@ -85,7 +85,7 @@ namespace BookManagement.ViewModel
             get
             {
                 if (_previousPageCommand == null)
-                    _previousPageCommand = new AsyncRelayCommand<Unit>(param => PreviousPageAsync(), null);
+                    _previousPageCommand = new AsyncRelayCommand<AuthorDto>(param => PreviousPageAsync(), null);
 
                 return _previousPageCommand;
             }
@@ -98,7 +98,7 @@ namespace BookManagement.ViewModel
             get
             {
                 if (_nextPageCommand == null)
-                    _nextPageCommand = new AsyncRelayCommand<Unit>(param => NextPageAsync(), null);
+                    _nextPageCommand = new AsyncRelayCommand<AuthorDto>(param => NextPageAsync(), null);
 
                 return _nextPageCommand;
             }
@@ -111,12 +111,35 @@ namespace BookManagement.ViewModel
             get
             {
                 if (_findDataCommand == null)
-                    _findDataCommand = new AsyncRelayCommand<Unit>(param => FindDataAsync(), null);
+                    _findDataCommand = new AsyncRelayCommand<AuthorDto>(param => FindDataAsync(), null);
 
                 return _findDataCommand;
             }
         }
+        private ICommand _getSingleDataCommand;
 
+        public ICommand GetSingleCommand
+        {
+            get
+            {
+                if (_getSingleDataCommand == null)
+                    _getSingleDataCommand = new AsyncRelayCommand<Object>(param => GetSingleDataAsync(param), null);
+
+                return _getSingleDataCommand;
+            }
+        }
+        private ICommand _resetCommand;
+
+        public ICommand ResetCommand
+        {
+            get
+            {
+                if (_resetCommand == null)
+                    _resetCommand = new AsyncRelayCommand<Object>(param => ResetData(), null);
+
+                return _resetCommand;
+            }
+        }
         private ICommand _removeDataCommand;
 
         public ICommand RemoveDataCommand
@@ -151,6 +174,7 @@ namespace BookManagement.ViewModel
         {
             if (AuthorModel.Model.Authorcode == Guid.Empty)
             {
+                AuthorModel.Model.Authorcode = Guid.NewGuid();
                 await _authorService.AddAsync(AuthorModel.Model);
             }
             else
@@ -159,9 +183,22 @@ namespace BookManagement.ViewModel
             }
 
             await GetAllAsync(string.Empty, PagedList.PageNumber);
-            AuthorModel.Model = new AuthorDto();
+            AuthorModel.Model = new AuthorDto() {Authorcode = new Guid(), AuthorName=string.Empty };
         }
+        private async Task GetSingleDataAsync(object value)
+        {
 
+            var items = value as System.Collections.IList;
+            var authorList = items.Cast<AuthorDto>()?.ToList();
+            if (authorList != null)
+            {
+                foreach (var item in authorList)
+                {
+                    AuthorModel.Model=item;
+                }
+            }
+           await Task.CompletedTask;
+        }
         private async Task NextPageAsync()
         {
             await GetAllAsync(string.Empty, PagedList.PageNumber + 1);
@@ -183,6 +220,11 @@ namespace BookManagement.ViewModel
                 await GetAllAsync(string.Empty, PagedList.PageNumber);
             }
         }
+        private async Task ResetData()
+        {
+            AuthorModel.Model = new AuthorDto() { Authorcode = new Guid(), AuthorName = string.Empty };
+            await Task.CompletedTask;
+        }
         /// <summary>
         /// Remove data unit
         /// </summary>
@@ -199,7 +241,7 @@ namespace BookManagement.ViewModel
                     await _authorService.DeleteAsync(x => x.Authorcode == item.Authorcode);
                 }
             }
-            
+            await GetAllAsync(string.Empty, PagedList.PageNumber);
         }
 
        

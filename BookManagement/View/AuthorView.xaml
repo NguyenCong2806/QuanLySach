@@ -20,11 +20,29 @@
         </i:EventTrigger>
     </i:Interaction.Triggers>
    
-    <Grid>
+    <Grid Background="#ffff">
         <Grid.RowDefinitions>
-            <RowDefinition Height="50"/>
+            <RowDefinition Height="0.5*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
+        <StackPanel Orientation="Vertical" Grid.Row="0" Width="800">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.Column="0" Orientation="Vertical">
+                    <Label Content="Author Name"/>
+                    <TextBox Text="{Binding AuthorModel.Model.AuthorName,Mode=TwoWay}"/>
+                </StackPanel>
+                <StackPanel Grid.Column="1" Orientation="Horizontal">
+                    <Button Content="Save" Command="{Binding SaveCommand}">
+                    </Button>
+                    <Button Content="Clear">
+                    </Button>
+                </StackPanel>
+            </Grid>
+        </StackPanel>
         <StackPanel Grid.Row="1" Width="800">
             <DataGrid RowStyle="{DynamicResource dataGridRowStyle1}" ColumnHeaderStyle="{DynamicResource dataGridColumnHeaderStyle1}" 
                       CellStyle="{DynamicResource dataGridCellStyle}" 
@@ -40,7 +58,8 @@
                             <DataTemplate>
                                 <StackPanel Orientation="Horizontal">
                                     <Button Style="{StaticResource buttongridedit}" ToolTip="Edit"
-                                            >
+                                            Command="{Binding DataContext.GetSingleCommand, ElementName=dataview}" 
+                                            CommandParameter="{Binding SelectedItems, ElementName=dataview}">
                                         <Icon:PackIconMaterial Width="15" Height="15" 
                                             Kind="PencilOutline"  
                                             HorizontalAlignment="Center"
