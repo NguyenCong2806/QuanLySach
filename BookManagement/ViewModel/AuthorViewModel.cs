@@ -30,7 +30,7 @@ namespace BookManagement.ViewModel
             {
                 KeyWord = string.Empty,
                 PageNumber = 1,
-                RecordsPerPage = 7,
+                RecordsPerPage = 10,
                 KeySelector = (d => d.Authorcode.ToString()),
                 KeyFind = new List<Expression<Func<Author, bool>>>()
             };
@@ -172,18 +172,26 @@ namespace BookManagement.ViewModel
 
         private async Task SaveData()
         {
-            if (AuthorModel.Model.Authorcode == Guid.Empty)
+            AuthorModel.Model.ValidateBookGenreName();
+            if (!AuthorModel.Model.HasErrors)
             {
-                AuthorModel.Model.Authorcode = Guid.NewGuid();
-                await _authorService.AddAsync(AuthorModel.Model);
-            }
-            else
-            {
-                await _authorService.UpdateAsync(AuthorModel.Model);
+                if (AuthorModel.Model.Authorcode == Guid.Empty)
+                {
+                    AuthorModel.Model.Authorcode = Guid.NewGuid();
+                    await _authorService.AddAsync(AuthorModel.Model);
+                }
+                else
+                {
+                    await _authorService.UpdateAsync(AuthorModel.Model);
+                }
+                await GetAllAsync(string.Empty, PagedList.PageNumber);
+                AuthorModel.Model = new AuthorDto() { Authorcode = new Guid(), AuthorName = string.Empty };
             }
 
-            await GetAllAsync(string.Empty, PagedList.PageNumber);
-            AuthorModel.Model = new AuthorDto() {Authorcode = new Guid(), AuthorName=string.Empty };
+            else {
+                return;
+            }
+
         }
         private async Task GetSingleDataAsync(object value)
         {
@@ -223,7 +231,8 @@ namespace BookManagement.ViewModel
         private async Task ResetData()
         {
             AuthorModel.Model = new AuthorDto() { Authorcode = new Guid(), AuthorName = string.Empty };
-            await Task.CompletedTask;
+            PagedList.KeyFind = new List<Expression<Func<Author, bool>>>();
+            await GetAllAsync(string.Empty, PagedList.PageNumber);
         }
         /// <summary>
         /// Remove data unit

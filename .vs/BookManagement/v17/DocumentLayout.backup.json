@@ -1,30 +1,22 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "F:\\6. Other\\QuanLySach\\",
+  "WorkspaceRootPath": "F:\\4. wpf\\QuanLySach\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C325B3B9-6547-4988-A3FE-9BF18FB1E116}|BookManagement\\BookManagement.csproj|f:\\6. other\\quanlysach\\bookmanagement\\repositorys\\deployment\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C325B3B9-6547-4988-A3FE-9BF18FB1E116}|BookManagement\\BookManagement.csproj|solutionrelative:bookmanagement\\repositorys\\deployment\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C325B3B9-6547-4988-A3FE-9BF18FB1E116}|BookManagement\\BookManagement.csproj|f:\\4. wpf\\quanlysach\\bookmanagement\\data\\dto\\authordto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C325B3B9-6547-4988-A3FE-9BF18FB1E116}|BookManagement\\BookManagement.csproj|solutionrelative:bookmanagement\\data\\dto\\authordto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C325B3B9-6547-4988-A3FE-9BF18FB1E116}|BookManagement\\BookManagement.csproj|F:\\6. Other\\QuanLySach\\bookmanagement\\viewmodel\\authorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C325B3B9-6547-4988-A3FE-9BF18FB1E116}|BookManagement\\BookManagement.csproj|f:\\4. wpf\\quanlysach\\bookmanagement\\data\\validatablebindablebase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C325B3B9-6547-4988-A3FE-9BF18FB1E116}|BookManagement\\BookManagement.csproj|solutionrelative:bookmanagement\\data\\validatablebindablebase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C325B3B9-6547-4988-A3FE-9BF18FB1E116}|BookManagement\\BookManagement.csproj|f:\\4. wpf\\quanlysach\\bookmanagement\\viewmodel\\authorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C325B3B9-6547-4988-A3FE-9BF18FB1E116}|BookManagement\\BookManagement.csproj|solutionrelative:bookmanagement\\viewmodel\\authorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C325B3B9-6547-4988-A3FE-9BF18FB1E116}|BookManagement\\BookManagement.csproj|f:\\6. other\\quanlysach\\bookmanagement\\view\\authorview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{C325B3B9-6547-4988-A3FE-9BF18FB1E116}|BookManagement\\BookManagement.csproj|f:\\4. wpf\\quanlysach\\bookmanagement\\view\\authorview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{C325B3B9-6547-4988-A3FE-9BF18FB1E116}|BookManagement\\BookManagement.csproj|solutionrelative:bookmanagement\\view\\authorview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C325B3B9-6547-4988-A3FE-9BF18FB1E116}|BookManagement\\BookManagement.csproj|F:\\6. Other\\QuanLySach\\bookmanagement\\style\\mainstyle.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{C325B3B9-6547-4988-A3FE-9BF18FB1E116}|BookManagement\\BookManagement.csproj|solutionrelative:bookmanagement\\style\\mainstyle.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C325B3B9-6547-4988-A3FE-9BF18FB1E116}|BookManagement\\BookManagement.csproj|F:\\6. Other\\QuanLySach\\bookmanagement\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{C325B3B9-6547-4988-A3FE-9BF18FB1E116}|BookManagement\\BookManagement.csproj|solutionrelative:bookmanagement\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C325B3B9-6547-4988-A3FE-9BF18FB1E116}|BookManagement\\BookManagement.csproj|F:\\6. Other\\QuanLySach\\bookmanagement\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{C325B3B9-6547-4988-A3FE-9BF18FB1E116}|BookManagement\\BookManagement.csproj|solutionrelative:bookmanagement\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedHeight": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -42,77 +34,54 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Repository.cs",
-              "DocumentMoniker": "F:\\6. Other\\QuanLySach\\BookManagement\\Repositorys\\Deployment\\Repository.cs",
-              "RelativeDocumentMoniker": "BookManagement\\Repositorys\\Deployment\\Repository.cs",
-              "ToolTip": "F:\\6. Other\\QuanLySach\\BookManagement\\Repositorys\\Deployment\\Repository.cs",
-              "RelativeToolTip": "BookManagement\\Repositorys\\Deployment\\Repository.cs",
-              "ViewState": "AgIAAHkAAAAAAAAAAAAUwJYAAAArAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "AuthorViewModel.cs",
+              "DocumentMoniker": "F:\\4. wpf\\QuanLySach\\BookManagement\\ViewModel\\AuthorViewModel.cs",
+              "RelativeDocumentMoniker": "BookManagement\\ViewModel\\AuthorViewModel.cs",
+              "ToolTip": "F:\\4. wpf\\QuanLySach\\BookManagement\\ViewModel\\AuthorViewModel.cs",
+              "RelativeToolTip": "BookManagement\\ViewModel\\AuthorViewModel.cs",
+              "ViewState": "AgIAAKcAAAAAAAAAAAAAAL8AAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-13T09:03:01.647Z",
+              "WhenOpened": "2024-11-13T16:22:54.352Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "AuthorView.xaml",
-              "DocumentMoniker": "F:\\6. Other\\QuanLySach\\BookManagement\\View\\AuthorView.xaml",
-              "RelativeDocumentMoniker": "BookManagement\\View\\AuthorView.xaml",
-              "ToolTip": "F:\\6. Other\\QuanLySach\\BookManagement\\View\\AuthorView.xaml",
-              "RelativeToolTip": "BookManagement\\View\\AuthorView.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-11-12T14:37:37.804Z",
+              "DocumentIndex": 0,
+              "Title": "AuthorDto.cs",
+              "DocumentMoniker": "F:\\4. wpf\\QuanLySach\\BookManagement\\Data\\Dto\\AuthorDto.cs",
+              "RelativeDocumentMoniker": "BookManagement\\Data\\Dto\\AuthorDto.cs",
+              "ToolTip": "F:\\4. wpf\\QuanLySach\\BookManagement\\Data\\Dto\\AuthorDto.cs",
+              "RelativeToolTip": "BookManagement\\Data\\Dto\\AuthorDto.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABgAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-13T16:22:39.329Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "AuthorViewModel.cs",
-              "DocumentMoniker": "F:\\6. Other\\QuanLySach\\BookManagement\\ViewModel\\AuthorViewModel.cs",
-              "RelativeDocumentMoniker": "BookManagement\\ViewModel\\AuthorViewModel.cs",
-              "ToolTip": "F:\\6. Other\\QuanLySach\\BookManagement\\ViewModel\\AuthorViewModel.cs",
-              "RelativeToolTip": "BookManagement\\ViewModel\\AuthorViewModel.cs",
-              "ViewState": "AgIAAKEAAAAAAAAAAAAiwLoAAAAIAAAAAAAAAA==",
+              "Title": "ValidatableBindableBase.cs",
+              "DocumentMoniker": "F:\\4. wpf\\QuanLySach\\BookManagement\\Data\\ValidatableBindableBase.cs",
+              "RelativeDocumentMoniker": "BookManagement\\Data\\ValidatableBindableBase.cs",
+              "ToolTip": "F:\\4. wpf\\QuanLySach\\BookManagement\\Data\\ValidatableBindableBase.cs",
+              "RelativeToolTip": "BookManagement\\Data\\ValidatableBindableBase.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-12T09:34:45.637Z",
+              "WhenOpened": "2024-11-13T16:22:35.519Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "MainStyle.xaml",
-              "DocumentMoniker": "F:\\6. Other\\QuanLySach\\BookManagement\\Style\\MainStyle.xaml",
-              "RelativeDocumentMoniker": "BookManagement\\Style\\MainStyle.xaml",
-              "ToolTip": "F:\\6. Other\\QuanLySach\\BookManagement\\Style\\MainStyle.xaml",
-              "RelativeToolTip": "BookManagement\\Style\\MainStyle.xaml",
+              "Title": "AuthorView.xaml",
+              "DocumentMoniker": "F:\\4. wpf\\QuanLySach\\BookManagement\\View\\AuthorView.xaml",
+              "RelativeDocumentMoniker": "BookManagement\\View\\AuthorView.xaml",
+              "ToolTip": "F:\\4. wpf\\QuanLySach\\BookManagement\\View\\AuthorView.xaml",
+              "RelativeToolTip": "BookManagement\\View\\AuthorView.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-11-12T16:31:36.53Z",
+              "WhenOpened": "2024-11-13T16:17:17.58Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "App.xaml",
-              "DocumentMoniker": "F:\\6. Other\\QuanLySach\\BookManagement\\App.xaml",
-              "RelativeDocumentMoniker": "BookManagement\\App.xaml",
-              "ToolTip": "F:\\6. Other\\QuanLySach\\BookManagement\\App.xaml",
-              "RelativeToolTip": "BookManagement\\App.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-11-13T02:16:22.451Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "App.config",
-              "DocumentMoniker": "F:\\6. Other\\QuanLySach\\BookManagement\\App.config",
-              "RelativeDocumentMoniker": "BookManagement\\App.config",
-              "ToolTip": "F:\\6. Other\\QuanLySach\\BookManagement\\App.config",
-              "RelativeToolTip": "BookManagement\\App.config",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAACFAQAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
-              "WhenOpened": "2024-11-13T02:16:23.339Z"
             }
           ]
         }
