@@ -85,7 +85,7 @@ namespace BookManagement.Common
         {
             if (page == 1)
             {
-                if (totalpage == page)
+                if (totalpage == page || totalpage==0)
                 {
                     isEnablePrevious = false;
                     isEnableNext = false;

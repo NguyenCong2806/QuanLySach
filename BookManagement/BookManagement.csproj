@@ -38,6 +38,12 @@
     <Reference Include="AutoMapper, Version=10.0.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
       <HintPath>..\packages\AutoMapper.10.0.0\lib\net461\AutoMapper.dll</HintPath>
     </Reference>
+    <Reference Include="BCrypt.Net-Next, Version=4.0.3.0, Culture=neutral, PublicKeyToken=1e11be04b6288443, processorArchitecture=MSIL">
+      <HintPath>..\packages\BCrypt.Net-Next.4.0.3\lib\net48\BCrypt.Net-Next.dll</HintPath>
+    </Reference>
+    <Reference Include="DevOne.Security.Cryptography.BCrypt, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\BCrypt.1.0.0.0\lib\DevOne.Security.Cryptography.BCrypt.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -190,8 +196,18 @@
       <HintPath>..\packages\SweetAlertSharp.1.3.0\lib\net452\SweetAlertSharp.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
     <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.3\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
@@ -235,34 +251,41 @@
     <Compile Include="Data\Dto\AuthorDto.cs" />
     <Compile Include="Data\Dto\BookGenreDto.cs" />
     <Compile Include="Data\Dto\BookPublisherDto.cs" />
+    <Compile Include="Data\Dto\SupplierDto.cs" />
     <Compile Include="Data\PagedList.cs" />
     <Compile Include="Data\ResultData.cs" />
     <Compile Include="Data\ValidatableBindableBase.cs" />
     <Compile Include="Helpper\Config\Btn.cs" />
     <Compile Include="Helpper\Config\InstanceBase.cs" />
     <Compile Include="Helpper\Config\MapperConfig.cs" />
+    <Compile Include="Helpper\PassBcrypt\PassBcrypt.cs" />
     <Compile Include="Model\AuthorModel.cs" />
     <Compile Include="Model\BookGenreModel.cs" />
     <Compile Include="Model\BookPublisherModel.cs" />
+    <Compile Include="Model\SupplierModel.cs" />
     <Compile Include="Repositorys\Deployment\AsyncCommand.cs" />
     <Compile Include="Repositorys\Deployment\AuthorRepository.cs" />
     <Compile Include="Repositorys\Deployment\BookGenreRepository.cs" />
     <Compile Include="Repositorys\Deployment\BookPublisherRepository.cs" />
     <Compile Include="Repositorys\Deployment\Repository.cs" />
+    <Compile Include="Repositorys\Deployment\SupplierRepository.cs" />
     <Compile Include="Repositorys\Interfaces\IAsyncCommand.cs" />
     <Compile Include="Repositorys\Interfaces\IAuthorRepository.cs" />
     <Compile Include="Repositorys\Interfaces\IBookGenreRepository.cs" />
     <Compile Include="Repositorys\Interfaces\IBookPublisherRepository.cs" />
     <Compile Include="Repositorys\Interfaces\IErrorHandler.cs" />
     <Compile Include="Repositorys\Interfaces\IRepositorys.cs" />
+    <Compile Include="Repositorys\Interfaces\ISupplierRepository.cs" />
     <Compile Include="Service\Deployment\AuthorService.cs" />
     <Compile Include="Service\Deployment\BookGenreService.cs" />
     <Compile Include="Service\Deployment\BookPublisherService.cs" />
     <Compile Include="Service\Deployment\Service.cs" />
+    <Compile Include="Service\Deployment\SupplierService.cs" />
     <Compile Include="Service\Interfaces\IAuthorService.cs" />
     <Compile Include="Service\Interfaces\IBookGenreService.cs" />
     <Compile Include="Service\Interfaces\IBookPublisherService.cs" />
     <Compile Include="Service\Interfaces\IService.cs" />
+    <Compile Include="Service\Interfaces\ISupplierService.cs" />
     <Compile Include="Utilities\AsyncRelayCommand.cs" />
     <Compile Include="Utilities\TaskUtilities.cs" />
     <Compile Include="Utilities\ViewModelBase.cs" />
