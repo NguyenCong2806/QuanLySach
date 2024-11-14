@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-F:\4. wpf\QuanLySach\BookManagement\obj\Debug\
+F:\6. Other\QuanLySach\BookManagement\obj\Debug\
 BookManagement
 none
 false
 DEBUG;TRACE
-F:\4. wpf\QuanLySach\BookManagement\App.xaml
+F:\6. Other\QuanLySach\BookManagement\App.xaml
 122140280875
 2-1447678515
-67856603259
-76-777933094
+732028754641
+761931803976
 MainWindow.xaml;Resources\Datatemple\Datatemple.xaml;Style\MainStyle.xaml;View\AuthorView.xaml;View\BookGenreView.xaml;View\BookPublisherView.xaml;View\BookView.xaml;View\DeliveryNoteView.xaml;View\EmployeeRoleView.xaml;View\EmployeeView.xaml;View\HomeView.xaml;View\SupplierView.xaml;
 
-False
+True
 
