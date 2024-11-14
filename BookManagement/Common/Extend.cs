@@ -85,15 +85,18 @@ namespace BookManagement.Common
         {
             if (page == 1)
             {
-                isEnablePrevious = false;
-                isEnableNext = true;
-                return;
-            }
-            if (totalpage == page && page == 1)
-            {
-                isEnablePrevious = false;
-                isEnableNext = false;
-                return;
+                if (totalpage == page)
+                {
+                    isEnablePrevious = false;
+                    isEnableNext = false;
+                    return;
+                }
+                else
+                {
+                    isEnablePrevious = false;
+                    isEnableNext = true;
+                    return;
+                }
             }
             if (page == totalpage && page > 1)
             {

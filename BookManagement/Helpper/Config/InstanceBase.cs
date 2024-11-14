@@ -49,6 +49,18 @@ namespace BookManagement.Helpper.Config
                 return _authorRepository;
             }
         }
+        private static IBookPublisherRepository _bookPublisherRepository;
+        public static IBookPublisherRepository BookPublisherRepository
+        {
+            get
+            {
+                if (_bookPublisherRepository == null)
+                {
+                    _bookPublisherRepository = new BookPublisherRepository(DbContext);
+                }
+                return _bookPublisherRepository;
+            }
+        }
         #endregion
 
         #region Service
@@ -74,6 +86,18 @@ namespace BookManagement.Helpper.Config
                     _authorService = new AuthorService(AuthorRepository);
                 }
                 return _authorService;
+            }
+        }
+        private static IBookPublisherService _bookPublisherService;
+        public static IBookPublisherService BookPublisherService
+        {
+            get
+            {
+                if (_bookPublisherService == null)
+                {
+                    _bookPublisherService = new BookPublisherService(AuthorRepository);
+                }
+                return _bookPublisherService;
             }
         }
         #endregion
