@@ -442,3 +442,12 @@ F:\4. wpf\QuanLySach\BookManagement\obj\Debug\BookManagement.Properties.Resource
 F:\4. wpf\QuanLySach\BookManagement\obj\Debug\BookManagement.csproj.GenerateResource.cache
 F:\4. wpf\QuanLySach\BookManagement\obj\Debug\BookManagement.csproj.CoreCompileInputs.cache
 F:\4. wpf\QuanLySach\BookManagement\obj\Debug\BookMana.AEF0CC0B.Up2Date
+F:\4. wpf\QuanLySach\BookManagement\bin\Debug\BCrypt.Net-Next.dll
+F:\4. wpf\QuanLySach\BookManagement\bin\Debug\DevOne.Security.Cryptography.BCrypt.dll
+F:\4. wpf\QuanLySach\BookManagement\bin\Debug\System.Buffers.dll
+F:\4. wpf\QuanLySach\BookManagement\bin\Debug\System.Memory.dll
+F:\4. wpf\QuanLySach\BookManagement\bin\Debug\System.Numerics.Vectors.dll
+F:\4. wpf\QuanLySach\BookManagement\bin\Debug\BCrypt.Net-Next.xml
+F:\4. wpf\QuanLySach\BookManagement\bin\Debug\System.Buffers.xml
+F:\4. wpf\QuanLySach\BookManagement\bin\Debug\System.Memory.xml
+F:\4. wpf\QuanLySach\BookManagement\bin\Debug\System.Numerics.Vectors.xml

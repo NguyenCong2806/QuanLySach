@@ -1,14 +1,10 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "F:\\6. Other\\QuanLySach\\",
+  "WorkspaceRootPath": "F:\\4. wpf\\QuanLySach\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C325B3B9-6547-4988-A3FE-9BF18FB1E116}|BookManagement\\BookManagement.csproj|f:\\6. other\\quanlysach\\bookmanagement\\model\\bookpublishermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C325B3B9-6547-4988-A3FE-9BF18FB1E116}|BookManagement\\BookManagement.csproj|solutionrelative:bookmanagement\\model\\bookpublishermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C325B3B9-6547-4988-A3FE-9BF18FB1E116}|BookManagement\\BookManagement.csproj|f:\\6. other\\quanlysach\\bookmanagement\\model\\bookgenremodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C325B3B9-6547-4988-A3FE-9BF18FB1E116}|BookManagement\\BookManagement.csproj|solutionrelative:bookmanagement\\model\\bookgenremodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C325B3B9-6547-4988-A3FE-9BF18FB1E116}|BookManagement\\BookManagement.csproj|f:\\4. wpf\\quanlysach\\bookmanagement\\helpper\\passbcrypt\\passbcrypt.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C325B3B9-6547-4988-A3FE-9BF18FB1E116}|BookManagement\\BookManagement.csproj|solutionrelative:bookmanagement\\helpper\\passbcrypt\\passbcrypt.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,7 +14,7 @@
       "DocumentGroups": [
         {
           "DockedHeight": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -26,28 +22,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "BookGenreModel.cs",
-              "DocumentMoniker": "F:\\6. Other\\QuanLySach\\BookManagement\\Model\\BookGenreModel.cs",
-              "RelativeDocumentMoniker": "BookManagement\\Model\\BookGenreModel.cs",
-              "ToolTip": "F:\\6. Other\\QuanLySach\\BookManagement\\Model\\BookGenreModel.cs",
-              "RelativeToolTip": "BookManagement\\Model\\BookGenreModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-14T07:36:30.427Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "BookPublisherModel.cs",
-              "DocumentMoniker": "F:\\6. Other\\QuanLySach\\BookManagement\\Model\\BookPublisherModel.cs",
-              "RelativeDocumentMoniker": "BookManagement\\Model\\BookPublisherModel.cs",
-              "ToolTip": "F:\\6. Other\\QuanLySach\\BookManagement\\Model\\BookPublisherModel.cs",
-              "RelativeToolTip": "BookManagement\\Model\\BookPublisherModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAA+AAAAAAAAAA==",
+              "Title": "PassBcrypt.cs",
+              "DocumentMoniker": "F:\\4. wpf\\QuanLySach\\BookManagement\\Helpper\\PassBcrypt\\PassBcrypt.cs",
+              "RelativeDocumentMoniker": "BookManagement\\Helpper\\PassBcrypt\\PassBcrypt.cs",
+              "ToolTip": "F:\\4. wpf\\QuanLySach\\BookManagement\\Helpper\\PassBcrypt\\PassBcrypt.cs",
+              "RelativeToolTip": "BookManagement\\Helpper\\PassBcrypt\\PassBcrypt.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-14T07:36:28.825Z",
+              "WhenOpened": "2024-11-14T15:26:16.558Z",
               "EditorCaption": ""
             }
           ]
