@@ -451,3 +451,5 @@ F:\4. wpf\QuanLySach\BookManagement\bin\Debug\BCrypt.Net-Next.xml
 F:\4. wpf\QuanLySach\BookManagement\bin\Debug\System.Buffers.xml
 F:\4. wpf\QuanLySach\BookManagement\bin\Debug\System.Memory.xml
 F:\4. wpf\QuanLySach\BookManagement\bin\Debug\System.Numerics.Vectors.xml
+F:\4. wpf\QuanLySach\BookManagement\obj\Debug\View\BookAddAndEdit.g.cs
+F:\4. wpf\QuanLySach\BookManagement\obj\Debug\View\BookAddAndEdit.baml

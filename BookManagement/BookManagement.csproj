@@ -251,6 +251,7 @@
     <Compile Include="Data\Dto\AuthorDto.cs" />
     <Compile Include="Data\Dto\BookGenreDto.cs" />
     <Compile Include="Data\Dto\BookPublisherDto.cs" />
+    <Compile Include="Data\Dto\EmployeeDto.cs" />
     <Compile Include="Data\Dto\SupplierDto.cs" />
     <Compile Include="Data\PagedList.cs" />
     <Compile Include="Data\ResultData.cs" />
@@ -267,29 +268,34 @@
     <Compile Include="Repositorys\Deployment\AuthorRepository.cs" />
     <Compile Include="Repositorys\Deployment\BookGenreRepository.cs" />
     <Compile Include="Repositorys\Deployment\BookPublisherRepository.cs" />
+    <Compile Include="Repositorys\Deployment\EmployeeRepository.cs" />
     <Compile Include="Repositorys\Deployment\Repository.cs" />
     <Compile Include="Repositorys\Deployment\SupplierRepository.cs" />
     <Compile Include="Repositorys\Interfaces\IAsyncCommand.cs" />
     <Compile Include="Repositorys\Interfaces\IAuthorRepository.cs" />
     <Compile Include="Repositorys\Interfaces\IBookGenreRepository.cs" />
     <Compile Include="Repositorys\Interfaces\IBookPublisherRepository.cs" />
+    <Compile Include="Repositorys\Interfaces\IEmployeeRepository.cs" />
     <Compile Include="Repositorys\Interfaces\IErrorHandler.cs" />
     <Compile Include="Repositorys\Interfaces\IRepositorys.cs" />
     <Compile Include="Repositorys\Interfaces\ISupplierRepository.cs" />
     <Compile Include="Service\Deployment\AuthorService.cs" />
     <Compile Include="Service\Deployment\BookGenreService.cs" />
     <Compile Include="Service\Deployment\BookPublisherService.cs" />
+    <Compile Include="Service\Deployment\EmployeeService.cs" />
     <Compile Include="Service\Deployment\Service.cs" />
     <Compile Include="Service\Deployment\SupplierService.cs" />
     <Compile Include="Service\Interfaces\IAuthorService.cs" />
     <Compile Include="Service\Interfaces\IBookGenreService.cs" />
     <Compile Include="Service\Interfaces\IBookPublisherService.cs" />
+    <Compile Include="Service\Interfaces\IEmployeeService.cs" />
     <Compile Include="Service\Interfaces\IService.cs" />
     <Compile Include="Service\Interfaces\ISupplierService.cs" />
     <Compile Include="Utilities\AsyncRelayCommand.cs" />
     <Compile Include="Utilities\TaskUtilities.cs" />
     <Compile Include="Utilities\ViewModelBase.cs" />
     <Compile Include="ViewModel\AuthorViewModel.cs" />
+    <Compile Include="ViewModel\BookAddAndEditViewModel.cs" />
     <Compile Include="ViewModel\BookGenreViewModel.cs" />
     <Compile Include="ViewModel\BookPublisherViewModel.cs" />
     <Compile Include="ViewModel\BookViewModel.cs" />
@@ -301,6 +307,9 @@
     <Compile Include="ViewModel\SupplierViewModel.cs" />
     <Compile Include="View\AuthorView.xaml.cs">
       <DependentUpon>AuthorView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\BookAddAndEdit.xaml.cs">
+      <DependentUpon>BookAddAndEdit.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\BookGenreView.xaml.cs">
       <DependentUpon>BookGenreView.xaml</DependentUpon>
@@ -389,6 +398,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\AuthorView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\BookAddAndEdit.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

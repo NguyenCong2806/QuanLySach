@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 F:\4. wpf\QuanLySach\BookManagement\App.xaml
-122140280875
+132125001615
 2-1447678515
-81362589220
+88-1669913869
 82-278784353
-MainWindow.xaml;Resources\Datatemple\Datatemple.xaml;Style\MainStyle.xaml;View\AuthorView.xaml;View\BookGenreView.xaml;View\BookPublisherView.xaml;View\BookView.xaml;View\DeliveryNoteView.xaml;View\EmployeeRoleView.xaml;View\EmployeeView.xaml;View\HomeView.xaml;View\SupplierView.xaml;
+MainWindow.xaml;Resources\Datatemple\Datatemple.xaml;Style\MainStyle.xaml;View\AuthorView.xaml;View\BookAddAndEdit.xaml;View\BookGenreView.xaml;View\BookPublisherView.xaml;View\BookView.xaml;View\DeliveryNoteView.xaml;View\EmployeeRoleView.xaml;View\EmployeeView.xaml;View\HomeView.xaml;View\SupplierView.xaml;
 
-True
+False
 
