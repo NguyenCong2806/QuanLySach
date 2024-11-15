@@ -73,6 +73,18 @@ namespace BookManagement.Helpper.Config
                 return _supplierRepository;
             }
         }
+        private static IEmployeeRepository _employeeRepository;
+        public static IEmployeeRepository EmployeeRepository
+        {
+            get
+            {
+                if (_employeeRepository == null)
+                {
+                    _employeeRepository = new EmployeeRepository(DbContext);
+                }
+                return _employeeRepository;
+            }
+        }
         #endregion
 
         #region Service
@@ -122,6 +134,18 @@ namespace BookManagement.Helpper.Config
                     _supplierService = new SupplierService(SupplierRepository);
                 }
                 return _supplierService;
+            }
+        }
+        private static IEmployeeService _employeeService;
+        public static IEmployeeService EmployeeService
+        {
+            get
+            {
+                if (_employeeService == null)
+                {
+                    _employeeService = new EmployeeService(EmployeeRepository);
+                }
+                return _employeeService;
             }
         }
         #endregion

@@ -23,23 +23,6 @@ namespace BookManagement.ViewModel
             get { return _currentView; }
             set { _currentView = value; OnPropertyChanged(nameof(CurrentView)); }
         }
-        private bool _homecheck;
-
-        public bool HomeCheck
-        {
-            get { return _homecheck; }
-            set { _homecheck = value; OnPropertyChanged(nameof(HomeCheck)); }
-        }
-        private bool _authorCheck;
-
-        public bool AuthorCheck
-        {
-            get { return _authorCheck; }
-            set { _authorCheck = value; OnPropertyChanged(nameof(AuthorCheck)); }
-        }
-
-
-
         public ICommand ShutdownCommand { get; set; }
         public ICommand HomeCommand { get; set; }
         public ICommand AuthorCommand { get; set; }
@@ -54,13 +37,11 @@ namespace BookManagement.ViewModel
         private async Task HomeView(object obj)
         {
             CurrentView = new HomeViewModel();
-            _homecheck = false;
             await Task.Yield();
         }
         private async Task AuthorView(object obj)
         {
             CurrentView = new AuthorViewModel();
-            _authorCheck = false;
             await Task.Yield();
         }
 
@@ -133,9 +114,6 @@ namespace BookManagement.ViewModel
             SupplierCommand = new AsyncRelayCommand<SupplierViewModel>(SupplierView, null, null);
             // Startup Page
             CurrentView = new HomeViewModel();
-            this._homecheck = false;
-            this._authorCheck = true;
-
         }
     }
 }

@@ -31,5 +31,7 @@
     <DataTemplate DataType="{x:Type vm:SupplierViewModel}">
         <view:SupplierView />
     </DataTemplate>
-    
+    <DataTemplate DataType="{x:Type vm:BookAddAndEditViewModel}">
+        <view:BookAddAndEdit />
+    </DataTemplate>
 </ResourceDictionary>

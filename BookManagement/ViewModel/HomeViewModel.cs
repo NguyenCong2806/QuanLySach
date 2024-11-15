@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BookManagement.ViewModel
 {
-    internal class HomeViewModel
+    public class HomeViewModel
     {
     }
 }
