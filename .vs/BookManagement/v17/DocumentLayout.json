@@ -1,9 +1,9 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "F:\\4. wpf\\QuanLySach\\",
+  "WorkspaceRootPath": "F:\\6. Other\\QuanLySach\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C325B3B9-6547-4988-A3FE-9BF18FB1E116}|BookManagement\\BookManagement.csproj|f:\\4. wpf\\quanlysach\\bookmanagement\\helpper\\passbcrypt\\passbcrypt.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C325B3B9-6547-4988-A3FE-9BF18FB1E116}|BookManagement\\BookManagement.csproj|F:\\6. Other\\QuanLySach\\bookmanagement\\helpper\\passbcrypt\\passbcrypt.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C325B3B9-6547-4988-A3FE-9BF18FB1E116}|BookManagement\\BookManagement.csproj|solutionrelative:bookmanagement\\helpper\\passbcrypt\\passbcrypt.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -14,7 +14,7 @@
       "DocumentGroups": [
         {
           "DockedHeight": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -24,9 +24,9 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "PassBcrypt.cs",
-              "DocumentMoniker": "F:\\4. wpf\\QuanLySach\\BookManagement\\Helpper\\PassBcrypt\\PassBcrypt.cs",
+              "DocumentMoniker": "F:\\6. Other\\QuanLySach\\BookManagement\\Helpper\\PassBcrypt\\PassBcrypt.cs",
               "RelativeDocumentMoniker": "BookManagement\\Helpper\\PassBcrypt\\PassBcrypt.cs",
-              "ToolTip": "F:\\4. wpf\\QuanLySach\\BookManagement\\Helpper\\PassBcrypt\\PassBcrypt.cs",
+              "ToolTip": "F:\\6. Other\\QuanLySach\\BookManagement\\Helpper\\PassBcrypt\\PassBcrypt.cs",
               "RelativeToolTip": "BookManagement\\Helpper\\PassBcrypt\\PassBcrypt.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
