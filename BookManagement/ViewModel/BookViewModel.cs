@@ -11,25 +11,6 @@ namespace BookManagement.ViewModel
         {
 
         }
-        private ICommand _nextPageAddAndEditCommand;
-
-        public ICommand NextPageAddAndEditCommand
-        {
-            get
-            {
-                if (_nextPageAddAndEditCommand == null)
-                    _nextPageAddAndEditCommand = new AsyncRelayCommand<object>(param => NextPage(), null);
-
-                return _nextPageAddAndEditCommand;
-            }
-        }
-
-        private async Task NextPage()
-        {
-            BookAddAndEdit bookAddAndEdit = new BookAddAndEdit();
-            bookAddAndEdit.
-            await Task.CompletedTask;
-        }
-        
+      
     }
 }

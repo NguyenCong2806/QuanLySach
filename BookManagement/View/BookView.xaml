@@ -9,13 +9,22 @@
              mc:Ignorable="d" 
              xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks" 
              xmlns:bookvm="clr-namespace:BookManagement.ViewModel"
+             xmlns:addview="clr-namespace:BookManagement.View"
              d:DesignHeight="450" d:DesignWidth="800">
     <UserControl.DataContext>
         <bookvm:BookViewModel/>
     </UserControl.DataContext>
-    
+
     <Grid Background="Beige">
-        <TextBlock Text="BookView" FontSize="65"/>
-        <Button Content="AddEditBook" Style="{DynamicResource buttonStyleSearch}" Command="{Binding NextPageAddAndEditCommand }" Width="100" Height="50"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0">
+            <addview:BookAddAndEdit Visibility="Hidden"/>
+        </StackPanel>
+        <StackPanel Grid.Row="1">
+            
+        </StackPanel>
     </Grid>
 </UserControl>
