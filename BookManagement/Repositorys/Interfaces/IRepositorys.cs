@@ -11,7 +11,7 @@ namespace BookManagement.Repositorys.Interfaces
     {
         Task<ResultData<T>> GetAllAsync<Tkey>(PagedList<T, Tkey> pagedList);
 
-        Task<IQueryable<T>> GetAll();
+        Task<ICollection<T>> GetAll();
 
         Task<T> GetValueAsync(Expression<Func<T, bool>> predicate);
 

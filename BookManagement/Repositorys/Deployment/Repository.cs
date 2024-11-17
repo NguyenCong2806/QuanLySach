@@ -79,12 +79,11 @@ namespace BookManagement.Repositorys.Deployment
             }
         }
 
-        public async Task<IQueryable<T>> GetAll()
+        public async Task<ICollection<T>> GetAll()
         {
             try
             {
-                var res = await _table.ToListAsync<T>();
-                return res.AsQueryable<T>();
+                return await _context.Set<T>().ToListAsync();
             }
             catch (Exception ex)
             {

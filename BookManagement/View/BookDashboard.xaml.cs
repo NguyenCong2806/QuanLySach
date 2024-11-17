@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace BookManagement.View
 {
     /// <summary>
-    /// Interaction logic for BookAddAndEdit.xaml
+    /// Interaction logic for BookDashboard.xaml
     /// </summary>
-    public partial class BookAddAndEdit : UserControl
+    public partial class BookDashboard : UserControl
     {
-        public BookAddAndEdit()
+        public BookDashboard()
         {
             InitializeComponent();
         }

@@ -7,6 +7,17 @@ namespace BookManagement.Data
     public abstract class DataModel<TModel> : ViewModelBase
         where TModel : class
     {
+        private bool _isShowView;
+
+        public bool IsShowView
+        {
+            get { return _isShowView; }
+            set
+            {
+                _isShowView = value;
+                OnPropertyChanged(nameof(IsShowView));
+            }
+        }
         private bool _isEnableNext;
 
         public bool IsEnableNext

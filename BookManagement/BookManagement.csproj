@@ -249,6 +249,7 @@
     <Compile Include="Common\Notice.cs" />
     <Compile Include="Data\DataModel.cs" />
     <Compile Include="Data\Dto\AuthorDto.cs" />
+    <Compile Include="Data\Dto\BookDto.cs" />
     <Compile Include="Data\Dto\BookGenreDto.cs" />
     <Compile Include="Data\Dto\BookPublisherDto.cs" />
     <Compile Include="Data\Dto\EmployeeDto.cs" />
@@ -259,15 +260,19 @@
     <Compile Include="Helpper\Config\Btn.cs" />
     <Compile Include="Helpper\Config\InstanceBase.cs" />
     <Compile Include="Helpper\Config\MapperConfig.cs" />
+    <Compile Include="Helpper\FileSetup\FileConfig.cs" />
     <Compile Include="Helpper\PassBcrypt\PassBcrypt.cs" />
+    <Compile Include="Model\AuthorDataModel.cs" />
     <Compile Include="Model\AuthorModel.cs" />
     <Compile Include="Model\BookGenreModel.cs" />
+    <Compile Include="Model\BookModel.cs" />
     <Compile Include="Model\BookPublisherModel.cs" />
     <Compile Include="Model\SupplierModel.cs" />
     <Compile Include="Repositorys\Deployment\AsyncCommand.cs" />
     <Compile Include="Repositorys\Deployment\AuthorRepository.cs" />
     <Compile Include="Repositorys\Deployment\BookGenreRepository.cs" />
     <Compile Include="Repositorys\Deployment\BookPublisherRepository.cs" />
+    <Compile Include="Repositorys\Deployment\BookRepository.cs" />
     <Compile Include="Repositorys\Deployment\EmployeeRepository.cs" />
     <Compile Include="Repositorys\Deployment\Repository.cs" />
     <Compile Include="Repositorys\Deployment\SupplierRepository.cs" />
@@ -275,6 +280,7 @@
     <Compile Include="Repositorys\Interfaces\IAuthorRepository.cs" />
     <Compile Include="Repositorys\Interfaces\IBookGenreRepository.cs" />
     <Compile Include="Repositorys\Interfaces\IBookPublisherRepository.cs" />
+    <Compile Include="Repositorys\Interfaces\IBookRepository.cs" />
     <Compile Include="Repositorys\Interfaces\IEmployeeRepository.cs" />
     <Compile Include="Repositorys\Interfaces\IErrorHandler.cs" />
     <Compile Include="Repositorys\Interfaces\IRepositorys.cs" />
@@ -282,12 +288,14 @@
     <Compile Include="Service\Deployment\AuthorService.cs" />
     <Compile Include="Service\Deployment\BookGenreService.cs" />
     <Compile Include="Service\Deployment\BookPublisherService.cs" />
+    <Compile Include="Service\Deployment\BookService.cs" />
     <Compile Include="Service\Deployment\EmployeeService.cs" />
     <Compile Include="Service\Deployment\Service.cs" />
     <Compile Include="Service\Deployment\SupplierService.cs" />
     <Compile Include="Service\Interfaces\IAuthorService.cs" />
     <Compile Include="Service\Interfaces\IBookGenreService.cs" />
     <Compile Include="Service\Interfaces\IBookPublisherService.cs" />
+    <Compile Include="Service\Interfaces\IBookService.cs" />
     <Compile Include="Service\Interfaces\IEmployeeService.cs" />
     <Compile Include="Service\Interfaces\IService.cs" />
     <Compile Include="Service\Interfaces\ISupplierService.cs" />
@@ -295,7 +303,6 @@
     <Compile Include="Utilities\TaskUtilities.cs" />
     <Compile Include="Utilities\ViewModelBase.cs" />
     <Compile Include="ViewModel\AuthorViewModel.cs" />
-    <Compile Include="ViewModel\BookAddAndEditViewModel.cs" />
     <Compile Include="ViewModel\BookGenreViewModel.cs" />
     <Compile Include="ViewModel\BookPublisherViewModel.cs" />
     <Compile Include="ViewModel\BookViewModel.cs" />
@@ -308,8 +315,8 @@
     <Compile Include="View\AuthorView.xaml.cs">
       <DependentUpon>AuthorView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\BookAddAndEdit.xaml.cs">
-      <DependentUpon>BookAddAndEdit.xaml</DependentUpon>
+    <Compile Include="View\BookDashboard.xaml.cs">
+      <DependentUpon>BookDashboard.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\BookGenreView.xaml.cs">
       <DependentUpon>BookGenreView.xaml</DependentUpon>
@@ -401,7 +408,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\BookAddAndEdit.xaml">
+    <Page Include="View\BookDashboard.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -472,7 +479,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Resources\Image\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="Entity\ModelDatabase.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>

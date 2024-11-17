@@ -85,6 +85,18 @@ namespace BookManagement.Helpper.Config
                 return _employeeRepository;
             }
         }
+        private static IBookRepository _bookRepository;
+        public static IBookRepository BookRepository
+        {
+            get
+            {
+                if (_bookRepository == null)
+                {
+                    _bookRepository = new BookRepository(DbContext);
+                }
+                return _bookRepository;
+            }
+        }
         #endregion
 
         #region Service
@@ -98,6 +110,18 @@ namespace BookManagement.Helpper.Config
                     _bookGenreService = new BookGenreService(BookGenreRepository);
                 }
                 return _bookGenreService;
+            }
+        }
+        private static IBookService _bookService;
+        public static IBookService BookService
+        {
+            get
+            {
+                if (_bookService == null)
+                {
+                    _bookService = new BookService(BookRepository);
+                }
+                return _bookService;
             }
         }
         private static IAuthorService _authorService;
