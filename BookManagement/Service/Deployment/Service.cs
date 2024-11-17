@@ -81,7 +81,7 @@ namespace BookManagement.Service.Deployment
             {
                 var configuration = new MapperConfiguration(cfg => cfg.CreateMap<TEntity, TModel>());
                 var data = await _repositorys.GetAll();
-                var model = data.ProjectTo<TModel>(configuration);
+                var model = data.AsQueryable<TEntity>().ProjectTo<TModel>(configuration);
                 return model;
             }
             catch (Exception ex)
