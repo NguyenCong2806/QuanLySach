@@ -173,6 +173,7 @@
                           CellStyle="{DynamicResource dataGridCellStyle}"
                         Style="{DynamicResource dataGridStyle}"
                         ItemsSource="{Binding  BookModel.Models}"
+                        SelectedItem="{Binding BookModel.Model}"
                            x:Name="dataview">           
                     <DataGrid.Columns>
                         <DataGridTextColumn IsReadOnly="True" Width="auto" Header="Bookcode" Visibility="Hidden" Binding="{Binding Bookcode}" />
