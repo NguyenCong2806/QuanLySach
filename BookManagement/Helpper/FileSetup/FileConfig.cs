@@ -71,6 +71,10 @@ namespace BookManagement.Helpper.FileSetup
         {
             return Path.GetFileNameWithoutExtension(path);
         }
+        public static string GetFileNameWithExtension(string path)
+        {
+            return Path.GetFileName(path);
+        }
         public static string GetFileName(FileInfo fileInfo)
         {
             return Path.GetFileNameWithoutExtension(fileInfo.Name);

@@ -42,6 +42,9 @@ namespace BookManagement.ViewModel
 
             BookModel = new BookModel();
 
+            BookModel.HiddenPage = "Hidden";
+            BookModel.VisiblePage = "Hidden";
+
             _bookService = InstanceBase.BookService;
             _authorService = InstanceBase.AuthorService;
             _bookGenreService = InstanceBase.BookGenreService;
@@ -74,9 +77,6 @@ namespace BookManagement.ViewModel
             Extend.Pagination(ref isEnablePrevious, ref isEnableNext, ref pageNumber, totalpage);
             BookModel.IsEnablePrevious = isEnablePrevious;
             BookModel.IsEnableNext = isEnableNext;
-
-            BookModel.HiddenPage = "Visible";
-            BookModel.VisiblePage = "Hidden";
 
             BookModel.Models = Extend.ToObservableCollection(data.ListData);
             BookModel.ComboBoxAuthorItemSource = new ObservableCollection<AuthorDto>(dataAuthors);
@@ -198,6 +198,18 @@ namespace BookManagement.ViewModel
                 return _removeDataCommand;
             }
         }
+        private ICommand _resetPageCommand;
+
+        public ICommand ResetPageCommand
+        {
+            get
+            {
+                if (_resetPageCommand == null)
+                    _resetPageCommand = new AsyncRelayCommand<object>(param => Reset(), null);
+
+                return _resetPageCommand;
+            }
+        }
         private ICommand _getAllData;
 
         public ICommand GetDataCommand
@@ -214,12 +226,22 @@ namespace BookManagement.ViewModel
         private async Task GetAll()
         {
             PagedList.PageNumber = 1;
+
+            BookModel.HiddenPage = "Visible";
+            BookModel.VisiblePage = "Hidden";
+
             await GetAllAsync(string.Empty, PagedList.PageNumber);
         }
         private async Task CheckHidden()
         {
            BookModel.HiddenPage = "Hidden";
            BookModel.VisiblePage = "Visible";
+            await Task.CompletedTask;
+        }
+        private async Task Reset()
+        {
+            BookModel.HiddenPage = "Visible";
+            BookModel.VisiblePage = "Hidden";
             await Task.CompletedTask;
         }
         private async Task OpenFodel()
@@ -270,12 +292,17 @@ namespace BookManagement.ViewModel
             var bookGenreList = items.Cast<BookDto>()?.ToList();
             if (bookGenreList != null)
             {
-                foreach (var item in bookGenreList)
-                {
-                    BookModel.Model = item;
-                    BookModel.Model.ImageUrl = FileConfig.GetFile(item.ImageUrl);
-                    BookModel.AuthorDto = await _authorService.GetValueAsync(x=>x.Authorcode==item.Authorcode);
-                }
+                BookDto book = bookGenreList.FirstOrDefault();
+                book.ImageUrl = FileConfig.GetFileNameWithExtension(book.ImageUrl);
+
+                BookModel.Model.AuthorDto = BookModel.ComboBoxAuthorItemSource.First(x=>x.Authorcode== book.Authorcode);
+                BookModel.Model.BookGenreDto = BookModel.ComboBoxBookGenreItemSource.First(x => x.BookGenrecode == book.BookGenrecode);
+                BookModel.Model.BookPublisherDto = BookModel.ComboBoxBookPublisherItemSource.First(x => x.BookPublishercode == book.BookPublishercode);
+                BookModel.Model.SupplierDto = BookModel.ComboBoxSupplierItemSource.First(x => x.Suppliercode == book.Suppliercode);
+                BookModel.Model = book;
+                BookModel.Model.ImageUrl = FileConfig.GetFile(book.ImageUrl);
+                
+                
                 await CheckHidden();
             }
             await Task.CompletedTask;
