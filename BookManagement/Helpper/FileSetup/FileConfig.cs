@@ -20,7 +20,10 @@ namespace BookManagement.Helpper.FileSetup
 
                 // Get the current PROJECT directory
                 string projectDirectory = Directory.GetParent(workingDirectory).Parent.FullName + @"\Resources\Image\" + System.IO.Path.GetFileName(targetPath);
-                
+                if (ExitFile(projectDirectory))
+                {
+                    return pathImage;
+                }
                 fileInfo.CopyTo(projectDirectory);
             }
             catch (Exception ex) {
@@ -70,6 +73,10 @@ namespace BookManagement.Helpper.FileSetup
         public static string GetFileName(string path)
         {
             return Path.GetFileNameWithoutExtension(path);
+        }
+        private static bool ExitFile(string path)
+        {
+            return File.Exists(path);
         }
         public static string GetFileNameWithExtension(string path)
         {

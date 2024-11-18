@@ -302,7 +302,6 @@ namespace BookManagement.ViewModel
                 BookModel.Model = book;
                 BookModel.Model.ImageUrl = FileConfig.GetFile(book.ImageUrl);
                 
-                
                 await CheckHidden();
             }
             await Task.CompletedTask;
@@ -345,7 +344,7 @@ namespace BookManagement.ViewModel
         private async Task RemoveAsync(object value)
         {
             var items = value as System.Collections.IList;
-            var bookGenreList = items.Cast<BookGenreDto>()?.ToList();
+            var bookGenreList = items.Cast<BookDto>()?.ToList();
             if (bookGenreList != null)
             {
                 foreach (var item in bookGenreList)
