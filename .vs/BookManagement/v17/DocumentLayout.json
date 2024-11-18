@@ -7,7 +7,7 @@
       "RelativeMoniker": "D:0:0:{C325B3B9-6547-4988-A3FE-9BF18FB1E116}|BookManagement\\BookManagement.csproj|solutionrelative:bookmanagement\\service\\deployment\\service.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C325B3B9-6547-4988-A3FE-9BF18FB1E116}|BookManagement\\BookManagement.csproj|f:\\4. wpf\\quanlysach\\bookmanagement\\viewmodel\\bookviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C325B3B9-6547-4988-A3FE-9BF18FB1E116}|BookManagement\\BookManagement.csproj|F:\\4. wpf\\QuanLySach\\bookmanagement\\viewmodel\\bookviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C325B3B9-6547-4988-A3FE-9BF18FB1E116}|BookManagement\\BookManagement.csproj|solutionrelative:bookmanagement\\viewmodel\\bookviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -52,7 +52,7 @@
               "RelativeDocumentMoniker": "BookManagement\\Service\\Deployment\\Service.cs",
               "ToolTip": "F:\\4. wpf\\QuanLySach\\BookManagement\\Service\\Deployment\\Service.cs",
               "RelativeToolTip": "BookManagement\\Service\\Deployment\\Service.cs",
-              "ViewState": "AgIAACEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAADMAAAAAAAAAAAAAAD0AAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-18T23:24:49.323Z",
               "EditorCaption": ""
@@ -66,8 +66,7 @@
               "ToolTip": "F:\\4. wpf\\QuanLySach\\BookManagement\\Style\\MainStyle.xaml",
               "RelativeToolTip": "BookManagement\\Style\\MainStyle.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-11-17T08:58:19.03Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-17T08:58:19.03Z"
             },
             {
               "$type": "Document",
@@ -79,8 +78,7 @@
               "RelativeToolTip": "BookManagement\\Model\\BookModel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-17T05:24:21.102Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-17T05:24:21.102Z"
             },
             {
               "$type": "Document",
@@ -91,8 +89,7 @@
               "ToolTip": "F:\\4. wpf\\QuanLySach\\BookManagement\\View\\BookView.xaml",
               "RelativeToolTip": "BookManagement\\View\\BookView.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-11-17T05:15:44.171Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-17T05:15:44.171Z"
             },
             {
               "$type": "Document",
@@ -116,8 +113,7 @@
               "RelativeToolTip": "BookManagement\\ViewModel\\BookViewModel.cs*",
               "ViewState": "AgIAAEcBAAAAAAAAAAAiwF8BAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-16T10:23:14.325Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-16T10:23:14.325Z"
             },
             {
               "$type": "Document",
