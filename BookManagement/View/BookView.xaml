@@ -22,78 +22,93 @@
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
-            <WrapPanel Orientation="Vertical" Grid.Column="0" Width="380"  Background="Aqua">
+            <WrapPanel Orientation="Vertical" Grid.Column="0" Width="380"  Background="Transparent">
                 <WrapPanel Orientation="Vertical" Margin="10 0">
-                    <Label Style="{DynamicResource labelStyle}" Content="Book Name"/>
-                    <TextBox Style="{DynamicResource textBoxStyle2}" Text="{Binding BookModel.Model.BookName}"/>
+                    <Label Style="{DynamicResource labelStyle}" Content="Book Name" />
+                    <TextBox Style="{DynamicResource textBoxStyle2}" Text="{Binding BookModel.Model.BookName}" />
                 </WrapPanel>
                 <WrapPanel Orientation="Vertical" Margin="10 0">
-                    <Label Style="{DynamicResource labelStyle}" Content="Quanity"/>
-                    <TextBox Style="{DynamicResource textBoxStyle2}" Text="{Binding BookModel.Model.Quanity}"/>
+                    <Label Style="{DynamicResource labelStyle}" Content="Quanity" />
+                    <TextBox Style="{DynamicResource textBoxStyle2}" Text="{Binding BookModel.Model.Quanity}" />
                 </WrapPanel>
                 <WrapPanel Orientation="Vertical" Margin="10 0">
-                    <Label Style="{DynamicResource labelStyle}" Content="Year Of Publication"/>
-                    <TextBox Style="{DynamicResource textBoxStyle2}"  Text="{Binding BookModel.Model.YearOfPublication}"/>
+                    <Label Style="{DynamicResource labelStyle}" Content="Year Of Publication" />
+                    <TextBox Style="{DynamicResource textBoxStyle2}"  Text="{Binding BookModel.Model.YearOfPublication}" />
                 </WrapPanel>
                 <WrapPanel Orientation="Vertical" Margin="10 0">
-                    <Label Style="{DynamicResource labelStyle}" Content="Image"/>
-                    <TextBox Style="{DynamicResource textBoxStyle2}"  Text="{Binding BookModel.Model.ImageUrl}"/>
-                    <Image Source="{Binding BookModel.Model.ImageUrl}" Width="100" Height="100" HorizontalAlignment="Left" />
-                    <Button  Width="50" Style="{StaticResource buttonStyleSave}" HorizontalAlignment="Left"  Command="{Binding OpenFileCommand}" Margin="0 10">
-                        <Icon:PackIconMaterial Width="15" Height="15" 
-                     Kind="Image"  
-                     HorizontalAlignment="Center"
-                     VerticalAlignment="Center"
-                     Foreground="#ffffff"/>         
-                    </Button>
+                    <Label Style="{DynamicResource labelStyle}" Content="Image" />
+                    <TextBox Style="{DynamicResource textBoxStyle2}"  Text="{Binding BookModel.Model.ImageUrl}" />
                 </WrapPanel>
-                
-                <Button  Width="70" Style="{StaticResource buttonStyleSave}" Command="{Binding SaveCommand}">
-                    <Icon:PackIconMaterial Width="15" Height="15" 
-                        Kind="ContentSavePlus"  
-                        HorizontalAlignment="Center"
-                        VerticalAlignment="Center"
-                        Foreground="#ffffff"/>
-                </Button>
+                <Grid Height="190">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <WrapPanel Orientation="Vertical" Grid.Column="0">
+                        <Image Source="{Binding BookModel.Model.ImageUrl}"  HorizontalAlignment="Left" />
+                    </WrapPanel>
+                    <WrapPanel Orientation="Horizontal" Margin="10" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <Button  Width="60" Style="{StaticResource buttonStyleSave}" HorizontalAlignment="Left"  Command="{Binding OpenFileCommand}">
+                            <Icon:PackIconMaterial Width="20" Height="20"
+                              Kind="Image"
+                              HorizontalAlignment="Center"
+                              VerticalAlignment="Center"
+                              Foreground="#ffffff" />
+                        </Button>
+                        <Button  Width="60" Style="{StaticResource buttonStyleSave}" Command="{Binding SaveCommand}">
+                            <Icon:PackIconMaterial Width="20" Height="20"
+                            Kind="ContentSavePlus"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Foreground="#ffffff" />
+                        </Button>
+                        <Button Margin="10" Width="60" Style="{StaticResource buttonStyleSave}" Command="{Binding ResetPageCommand}">
+                            <Icon:PackIconMaterial Width="20" Height="20"
+                                     Kind="Cached"
+                                     HorizontalAlignment="Center"
+                                     VerticalAlignment="Center"
+                                     Foreground="#ffffff" />
+                        </Button>
+                    </WrapPanel>
+                </Grid>
             </WrapPanel>
             <WrapPanel Orientation="Vertical" Grid.Column="1" Width="380">
                 <WrapPanel Orientation="Vertical" Margin="10 0">
-                    <Label Style="{DynamicResource labelStyle}" Content="Author"/>
+                    <Label Style="{DynamicResource labelStyle}" Content="Author" />
                     <ComboBox  Width="360"
                       Style="{DynamicResource comboBoxStyle}"
-                      ItemsSource="{Binding BookModel.ComboBoxAuthorItemSource}"    
-                      SelectedItem="{Binding BookModel.AuthorDto, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  
-                      DisplayMemberPath="AuthorName"/>
+                      ItemsSource="{Binding BookModel.ComboBoxAuthorItemSource}"
+                      SelectedItem="{Binding BookModel.Model.AuthorDto}"
+                      DisplayMemberPath="AuthorName" />
                 </WrapPanel>
 
                 <WrapPanel Orientation="Vertical" Margin="10 0">
-                    <Label Style="{DynamicResource labelStyle}" Content="BookGenre"/>
+                    <Label Style="{DynamicResource labelStyle}" Content="BookGenre" />
                     <ComboBox  Width="360"
                       Style="{DynamicResource comboBoxStyle}"
-                      ItemsSource="{Binding BookModel.ComboBoxBookGenreItemSource}"    
-                      SelectedItem="{Binding BookModel.Model.BookGenreDto}"  
-                      DisplayMemberPath="BookGenreName"/>
+                      ItemsSource="{Binding BookModel.ComboBoxBookGenreItemSource}"
+                      SelectedItem="{Binding BookModel.Model.BookGenreDto}"
+                      DisplayMemberPath="BookGenreName" />
                 </WrapPanel>
                 <WrapPanel Orientation="Vertical" Margin="10 0">
-                    <Label Style="{DynamicResource labelStyle}" Content="BookPublisher"/>
+                    <Label Style="{DynamicResource labelStyle}" Content="BookPublisher" />
                     <ComboBox  Width="360"
                    Style="{DynamicResource comboBoxStyle}"
-                   ItemsSource="{Binding BookModel.ComboBoxBookPublisherItemSource}"    
-                   SelectedItem="{Binding BookModel.Model.BookPublisherDto}"  
-                   DisplayMemberPath="BookPublisherName"/>
+                   ItemsSource="{Binding BookModel.ComboBoxBookPublisherItemSource}"
+                   SelectedItem="{Binding BookModel.Model.BookPublisherDto}"
+                   DisplayMemberPath="BookPublisherName" />
                 </WrapPanel>
                 <WrapPanel Orientation="Vertical" Margin="10 0">
-                    <Label Style="{DynamicResource labelStyle}" Content="Supplier"/>
+                    <Label Style="{DynamicResource labelStyle}" Content="Supplier" />
                     <ComboBox  Width="360"
                         Style="{DynamicResource comboBoxStyle}"
-                        ItemsSource="{Binding BookModel.ComboBoxSupplierItemSource}"    
-                        SelectedItem="{Binding BookModel.Model.SupplierDto}"  
-                        DisplayMemberPath="SupplierName"/>
+                        ItemsSource="{Binding BookModel.ComboBoxSupplierItemSource}"
+                        SelectedItem="{Binding BookModel.Model.SupplierDto}"
+                        DisplayMemberPath="SupplierName" />
                 </WrapPanel>
             </WrapPanel>
-
         </Grid>
-        <Grid Background="Transparent" Visibility="{Binding BookModel.HiddenPage}">
+        <Grid Background="Transparent"  Visibility="{Binding BookModel.HiddenPage}">
             <Grid.RowDefinitions>
                 <RowDefinition Height="0.35*" />
                 <RowDefinition Height="*"/>
@@ -143,23 +158,22 @@
                     Foreground="#ffffff" />
                         </Button>
                         <Button ToolTip="Refresh" Style="{DynamicResource buttonStyleClear}"
-        Command="{Binding ResetCommand}">
+                             Command="{Binding ResetCommand}">
                             <Icon:PackIconMaterial Width="15" Height="15"
-    Kind="Refresh"
-    HorizontalAlignment="Center"
-    VerticalAlignment="Center"
-    Foreground="#ffffff" />
+                                Kind="Refresh"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Foreground="#ffffff" />     
                         </Button>
                     </WrapPanel>
                 </Grid>
             </StackPanel>
             <StackPanel Grid.Row="1" Width="800" Height="470">
                 <DataGrid RowStyle="{DynamicResource dataGridRowStyle1}" ColumnHeaderStyle="{DynamicResource dataGridColumnHeaderStyle1}"
-  CellStyle="{DynamicResource dataGridCellStyle}"
-Style="{DynamicResource dataGridStyle}"
-ItemsSource="{Binding  BookModel.Models}"
-SelectedItem="{Binding BookModel.Model}"
-   x:Name="dataview">
+                          CellStyle="{DynamicResource dataGridCellStyle}"
+                        Style="{DynamicResource dataGridStyle}"
+                        ItemsSource="{Binding  BookModel.Models}"
+                           x:Name="dataview">           
                     <DataGrid.Columns>
                         <DataGridTextColumn IsReadOnly="True" Width="auto" Header="Bookcode" Visibility="Hidden" Binding="{Binding Bookcode}" />
                         <DataGridTextColumn IsReadOnly="True" Width="*" Header="BookName" Binding="{Binding BookName}" />

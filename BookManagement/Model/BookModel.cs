@@ -17,17 +17,6 @@ namespace BookManagement.Model
                 OnPropertyChanged(nameof(HiddenPage));
             }
         }
-        private AuthorDto _authorDto;
-
-        public AuthorDto AuthorDto
-        {
-            get { return _authorDto; }
-            set
-            {
-                _authorDto = value;
-                OnPropertyChanged(nameof(AuthorDto));
-            }
-        }
         private string _visiblePage;
 
         public string VisiblePage
