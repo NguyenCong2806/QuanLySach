@@ -23,6 +23,7 @@ namespace BookManagement.Service.Interfaces
 
         Task DeleteAsync(Expression<Func<TEntity, bool>> predicate);
 
+
         Task DeleteAsync(TModel entity);
 
         Task UpdateAsync(TModel entity);

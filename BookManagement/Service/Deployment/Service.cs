@@ -19,7 +19,7 @@ namespace BookManagement.Service.Deployment
         where TModel : class
     {
         protected IRepositorys<TEntity> _repositorys { get; set; }
-        private Mapper _mapper;
+        protected Mapper _mapper;
 
         public Service(IRepositorys<TEntity> repositorys)
         {
