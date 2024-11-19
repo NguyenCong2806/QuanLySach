@@ -247,11 +247,15 @@ namespace BookManagement.ViewModel
         private async Task OpenFodel()
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
-            if (openFileDialog.ShowDialog() == true) 
+            if (openFileDialog.ShowDialog() == true)
             {
                 BookModel.Model.ImageUrl = openFileDialog.FileName;
-
             }
+            else {
+
+                return;
+            }
+
             await Task.CompletedTask;
         }
         private async Task SaveData()
@@ -349,7 +353,7 @@ namespace BookManagement.ViewModel
             {
                 foreach (var item in bookGenreList)
                 {
-                    await _bookService.DeleteAsync(x => x.BookGenrecode == item.BookGenrecode);
+                    await _bookService.DeleteBookAsync(x => x.BookGenrecode == item.BookGenrecode);
                 }
             }
             await GetAllAsync(string.Empty, PagedList.PageNumber);

@@ -15,10 +15,8 @@ namespace BookManagement.Helpper.FileSetup
             try
             {
                 FileInfo fileInfo = new FileInfo(targetPath);
-                // Get current working directory (..\bin\Debug)
                 string workingDirectory = Environment.CurrentDirectory;
 
-                // Get the current PROJECT directory
                 string projectDirectory = Directory.GetParent(workingDirectory).Parent.FullName + @"\Resources\Image\" + System.IO.Path.GetFileName(targetPath);
                 if (ExitFile(projectDirectory))
                 {
