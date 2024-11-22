@@ -28,6 +28,9 @@ namespace BookManagement.ViewModel
         private IBookPublisherService _bookPublisherService;
         private ISupplierService _supplierService;
 
+        public bool IsCheck {  get; set; }
+        public string ImgName { get; set; }
+
         public PagedList<Book, string> PagedList;
         public BookViewModel()
         {
@@ -234,14 +237,16 @@ namespace BookManagement.ViewModel
         }
         private async Task CheckHidden()
         {
-           BookModel.HiddenPage = "Hidden";
-           BookModel.VisiblePage = "Visible";
+            BookModel.HiddenPage = "Hidden";
+            BookModel.VisiblePage = "Visible";
+            BookModel.Model = new BookDto();
             await Task.CompletedTask;
         }
         private async Task Reset()
         {
             BookModel.HiddenPage = "Visible";
             BookModel.VisiblePage = "Hidden";
+            BookModel.Model = new BookDto();
             await Task.CompletedTask;
         }
         private async Task OpenFodel()
@@ -249,6 +254,8 @@ namespace BookManagement.ViewModel
             OpenFileDialog openFileDialog = new OpenFileDialog();
             if (openFileDialog.ShowDialog() == true)
             {
+                IsCheck = true;
+                ImgName = BookModel.Model.ImageUrl;
                 BookModel.Model.ImageUrl = openFileDialog.FileName;
             }
             else {
@@ -275,11 +282,15 @@ namespace BookManagement.ViewModel
                 }
                 else
                 {
+                    if (IsCheck)
+                    {
+                        ///Xoas file cu //
+                        FileConfig.DeleFileUpdate(ImgName);
+                    }
                     
                     await _bookService.UpdateAsync(BookModel.Model);
                 }
                 await GetAllAsync(string.Empty, PagedList.PageNumber);
-                BookModel.Model = new BookDto();
                 BookModel.HiddenPage = "Visible";
                 BookModel.VisiblePage = "Hidden";
 
@@ -305,8 +316,9 @@ namespace BookManagement.ViewModel
                 BookModel.Model.SupplierDto = BookModel.ComboBoxSupplierItemSource.First(x => x.Suppliercode == book.Suppliercode);
                 BookModel.Model = book;
                 BookModel.Model.ImageUrl = FileConfig.GetFile(book.ImageUrl);
-                
-                await CheckHidden();
+
+                BookModel.HiddenPage = "Hidden";
+                BookModel.VisiblePage = "Visible";
             }
             await Task.CompletedTask;
         }

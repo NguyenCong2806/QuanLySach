@@ -11,7 +11,7 @@
         AllowsTransparency="True"
         mc:Ignorable="d"
         xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks" xmlns:Menu="clr-namespace:BookManagement.Helpper.Config"
-        Title="MainWindow" Height="700" Width="1024">
+        Title="MainWindow" Height="730" Width="1024">
     <Window.DataContext>
         <vm:MainWindowViewModel/>
     </Window.DataContext>
