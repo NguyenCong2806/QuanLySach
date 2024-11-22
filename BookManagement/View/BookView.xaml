@@ -168,7 +168,7 @@
                     </WrapPanel>
                 </Grid>
             </StackPanel>
-            <StackPanel Grid.Row="1" Width="800" Height="470">
+            <StackPanel Grid.Row="1" Width="800" Height="520">
                 <DataGrid RowStyle="{DynamicResource dataGridRowStyle1}" ColumnHeaderStyle="{DynamicResource dataGridColumnHeaderStyle1}"
                           CellStyle="{DynamicResource dataGridCellStyle}"
                         Style="{DynamicResource dataGridStyle}"

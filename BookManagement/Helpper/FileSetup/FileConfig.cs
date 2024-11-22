@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Runtime.InteropServices;
 using System.Windows;
 
 
@@ -48,7 +49,7 @@ namespace BookManagement.Helpper.FileSetup
             }
             return pathImage;
         }
-        public static string DeleFile(string targetPath)
+        public static void DeleFile(string targetPath)
         {
             string pathImage = string.Empty;
             try
@@ -58,15 +59,43 @@ namespace BookManagement.Helpper.FileSetup
 
                 // Get the current PROJECT directory
                 pathImage = Directory.GetParent(workingDirectory).Parent.FullName + @"\Resources\Image\" + targetPath;
-
-               File.Delete(pathImage);
+                if (ExitFile(pathImage))
+                {
+                    File.Delete(pathImage);
+                }
+                else 
+                {
+                    return;
+                }
+                
             }
             catch (Exception ex)
             {
 
                 pathImage = ex.Message;
             }
-            return pathImage;
+        }
+        public static void DeleFileUpdate(string targetPath)
+        {
+
+            try
+            {
+                if (ExitFile(targetPath))
+                {
+                    GC.Collect();
+                    GC.WaitForPendingFinalizers();
+                    File.Delete(targetPath);
+                }
+                else
+                {
+                    return;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                
+            }
         }
         public static string GetFileName(string path)
         {
