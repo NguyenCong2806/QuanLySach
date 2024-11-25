@@ -9,6 +9,7 @@
                 <ResourceDictionary Source="pack://application:,,,/ToastNotifications.Messages;component/Themes/Default.xaml" />
                 <ResourceDictionary Source="Style/MainStyle.xaml" />
                 <ResourceDictionary Source="Resources/Datatemple/Datatemple.xaml" />
+                <ResourceDictionary Source="Resources/ControlTemplate/Controltemplate.xaml" />
             </ResourceDictionary.MergedDictionaries>
 
             <Style x:Key="FocusVisual">

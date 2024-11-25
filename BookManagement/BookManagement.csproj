@@ -254,6 +254,7 @@
     <Compile Include="Data\Dto\BookPublisherDto.cs" />
     <Compile Include="Data\Dto\EmployeeDto.cs" />
     <Compile Include="Data\Dto\SupplierDto.cs" />
+    <Compile Include="Data\Dto\UserLoginDto.cs" />
     <Compile Include="Data\PagedList.cs" />
     <Compile Include="Data\ResultData.cs" />
     <Compile Include="Data\ValidatableBindableBase.cs" />
@@ -262,12 +263,16 @@
     <Compile Include="Helpper\Config\MapperConfig.cs" />
     <Compile Include="Helpper\FileSetup\FileConfig.cs" />
     <Compile Include="Helpper\PassBcrypt\PassBcrypt.cs" />
+    <Compile Include="Login.xaml.cs">
+      <DependentUpon>Login.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Model\AuthorDataModel.cs" />
     <Compile Include="Model\AuthorModel.cs" />
     <Compile Include="Model\BookGenreModel.cs" />
     <Compile Include="Model\BookModel.cs" />
     <Compile Include="Model\BookPublisherModel.cs" />
     <Compile Include="Model\SupplierModel.cs" />
+    <Compile Include="Model\UserLoginModel.cs" />
     <Compile Include="Repositorys\Deployment\AsyncCommand.cs" />
     <Compile Include="Repositorys\Deployment\AuthorRepository.cs" />
     <Compile Include="Repositorys\Deployment\BookGenreRepository.cs" />
@@ -310,6 +315,7 @@
     <Compile Include="ViewModel\EmployeeRoleViewModel.cs" />
     <Compile Include="ViewModel\EmployeeViewModel.cs" />
     <Compile Include="ViewModel\HomeViewModel.cs" />
+    <Compile Include="ViewModel\LoginViewModel.cs" />
     <Compile Include="ViewModel\MainWindowViewModel.cs" />
     <Compile Include="ViewModel\SupplierViewModel.cs" />
     <Compile Include="View\AuthorView.xaml.cs">
@@ -342,6 +348,10 @@
     <Compile Include="View\SupplierView.xaml.cs">
       <DependentUpon>SupplierView.xaml</DependentUpon>
     </Compile>
+    <Page Include="Login.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -396,6 +406,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Resources\ControlTemplate\Controltemplate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Resources\Datatemple\Datatemple.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -475,13 +489,13 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <None Include="Resources\Image\buoc-duong-cung.webp" />
+    <None Include="Resources\Image\tac-pham-van-hoc-8.webp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Resources\Image\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="Entity\ModelDatabase.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -493,6 +507,18 @@
       <DependentUpon>ModelDatabase.edmx</DependentUpon>
       <LastGenOutput>ModelDatabase.cs</LastGenOutput>
     </Content>
+    <Resource Include="Resources\Image\danh-tac-viet-nam-chi-pheo.jpg" />
+    <Resource Include="Resources\Image\download %281%29.jpg" />
+    <Resource Include="Resources\Image\download %282%29.jpg" />
+    <Resource Include="Resources\Image\download %283%29.jpg" />
+    <Resource Include="Resources\Image\images.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Image\kieu.jpg" />
+    <Resource Include="Resources\Image\nam-cao-doi-thua.jpg" />
+    <Resource Include="Resources\Image\tac-gia-tac-pham-gio-lanh-dau-mua-2.png" />
+    <Resource Include="Resources\Image\Vangbongmotthoi.jpg" />
+    <Resource Include="Resources\Image\vonhat.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

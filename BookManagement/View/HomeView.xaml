@@ -6,7 +6,10 @@
              xmlns:local="clr-namespace:BookManagement.View"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid Background="Beige">
-        <TextBlock Text="Chaof" FontSize="65"/>
+    <Grid Background="Transparent">
+        <TextBox Margin="10,10,10,0" TextWrapping="Wrap" Tag="My Name"
+            Text="Pham Tuan" VerticalAlignment="Top" BorderBrush="#FF007ACC"
+                Template="{DynamicResource TextBoxBaseTemplate}" Padding="0,2"/>
+
     </Grid>
 </UserControl>

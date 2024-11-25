@@ -10,11 +10,22 @@
         Background="Transparent"
         AllowsTransparency="True"
         mc:Ignorable="d"
-        xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks" xmlns:Menu="clr-namespace:BookManagement.Helpper.Config"
+        Name="mainview"
+        xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks" 
+        xmlns:Menu="clr-namespace:BookManagement.Helpper.Config"
+        xmlns:i = "http://schemas.microsoft.com/expression/2010/interactivity" 
+        xmlns:ei = "http://schemas.microsoft.com/expression/2010/interactions" 
         Title="MainWindow" Height="730" Width="1024">
     <Window.DataContext>
         <vm:MainWindowViewModel/>
     </Window.DataContext>
+
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Loaded">
+            <i:InvokeCommandAction Command="{Binding ViewChangeCommand}" CommandParameter="{Binding ElementName=mainview}"/>
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+    
     <Grid Background="#e0dede">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="0.8*" />

@@ -21,6 +21,16 @@
         <Setter Property="Margin" Value="10 20" />
         <Setter Property="TextAlignment" Value="Center" />
     </Style>
+    <Style x:Key="textBlock3" TargetType="{x:Type TextBlock}">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Foreground" Value="Black" />
+        <Setter Property="FontSize" Value="36" />
+        <Setter Property="FontWeight" Value="Bold" />
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="Margin" Value="10 20" />
+        <Setter Property="TextAlignment" Value="Center" />
+    </Style>
     <Style x:Key="textBlock2" TargetType="{x:Type TextBlock}">
         <Setter Property="Background" Value="Transparent" />
         <Setter Property="Foreground" Value="#ffff" />
