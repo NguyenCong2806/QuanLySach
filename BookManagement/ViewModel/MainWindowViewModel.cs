@@ -33,6 +33,7 @@ namespace BookManagement.ViewModel
         public ICommand EmployeeCommand { get; set; }
         public ICommand EmployeeRoleCommand { get; set; }
         public ICommand SupplierCommand { get; set; }
+        public ICommand ViewChangeCommand { get; set; }
 
         private async Task HomeView(object obj)
         {
@@ -112,8 +113,32 @@ namespace BookManagement.ViewModel
             EmployeeCommand = new AsyncRelayCommand<EmployeeViewModel>(EmployeeView, null, null);
             EmployeeRoleCommand = new AsyncRelayCommand<EmployeeRoleViewModel>(EmployeeRoleView, null, null);
             SupplierCommand = new AsyncRelayCommand<SupplierViewModel>(SupplierView, null, null);
+            ViewChangeCommand = new AsyncRelayCommand<object>(ViewChanged, null, null);
             // Startup Page
             CurrentView = new HomeViewModel();
+        }
+        private async Task ViewChanged(object obj)
+        {
+            Window window = obj as Window;
+            if (!Isloaded)
+            {
+                Isloaded = true;
+                window.Hide();
+                Login loginview = new Login();
+                loginview.ShowDialog();
+                var login = loginview.DataContext as LoginViewModel;
+                if (login == null) return;
+                if (login.IsLogin)
+                {
+                    window.Show();
+                }
+                else
+                {
+                    window.Close();
+                }
+
+            }
+            await Task.Yield();
         }
     }
 }

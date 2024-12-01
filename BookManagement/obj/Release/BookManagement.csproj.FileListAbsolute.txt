@@ -157,3 +157,6 @@ F:\4. wpf\QuanLySach\BookManagement\obj\Release\BookManagement.csproj.CoreCompil
 F:\4. wpf\QuanLySach\BookManagement\obj\Release\BookMana.AEF0CC0B.Up2Date
 F:\4. wpf\QuanLySach\BookManagement\obj\Release\BookManagement.exe
 F:\4. wpf\QuanLySach\BookManagement\obj\Release\BookManagement.pdb
+F:\4. wpf\QuanLySach\BookManagement\obj\Release\Resources\ControlTemplate\Controltemplate.baml
+F:\4. wpf\QuanLySach\BookManagement\obj\Release\Login.g.cs
+F:\4. wpf\QuanLySach\BookManagement\obj\Release\Login.baml

@@ -19,7 +19,7 @@
         /// <returns></returns>
         public static bool VerifyEnhanced(string password, string passwordHash)
         {
-            return BCrypt.Net.BCrypt.EnhancedVerify("Secret Password", passwordHash);
+            return BCrypt.Net.BCrypt.EnhancedVerify(password, passwordHash);
         }
     }
 }

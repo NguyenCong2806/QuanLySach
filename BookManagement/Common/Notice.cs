@@ -19,6 +19,13 @@
         public const string OKTEXT = "Có";
         public const string CANCELTEXT = "Không";
 
+
+
+        public const string LOGINSUCCESS = "Đăng nhập thành công";
+        public const string LOGINFAILURE = "Đăng nhập thất bại";
+        public const string USERNAMENOT = "Tài khoản không tồn tại!";
+        public const string PASSWORDNOT = "Mật khẩu đăng nhập không đúng!";
+
         public const double OFFSETX = 20;
         public const double OFFSETY = 20;
 

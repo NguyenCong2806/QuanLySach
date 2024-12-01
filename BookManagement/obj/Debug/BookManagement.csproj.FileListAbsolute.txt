@@ -464,3 +464,6 @@ F:\6. Other\QuanLySach\BookManagement\obj\Debug\View\BookAddAndEdit.g.cs
 F:\6. Other\QuanLySach\BookManagement\obj\Debug\View\BookAddAndEdit.baml
 F:\4. wpf\QuanLySach\BookManagement\obj\Debug\View\BookDashboard.g.cs
 F:\4. wpf\QuanLySach\BookManagement\obj\Debug\View\BookDashboard.baml
+F:\4. wpf\QuanLySach\BookManagement\obj\Debug\Resources\ControlTemplate\Controltemplate.baml
+F:\4. wpf\QuanLySach\BookManagement\obj\Debug\Login.g.cs
+F:\4. wpf\QuanLySach\BookManagement\obj\Debug\Login.baml
