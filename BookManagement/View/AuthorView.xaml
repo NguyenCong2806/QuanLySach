@@ -19,7 +19,7 @@
             <i:InvokeCommandAction Command="{Binding GetDataCommand}"/>
         </i:EventTrigger>
     </i:Interaction.Triggers>
-    
+
     <Grid Background="Transparent">
         <Grid.RowDefinitions>
             <RowDefinition Height="0.35*"/>
@@ -53,39 +53,39 @@
                 </StackPanel>
                 <WrapPanel HorizontalAlignment="Left" VerticalAlignment="Bottom" Grid.Column="1" Orientation="Horizontal">
                     <Button ToolTip="Search" Style="{DynamicResource buttonStyleSearch}" 
-                        Command="{Binding FindDataCommand}">
+                    Command="{Binding FindDataCommand}">
                         <Icon:PackIconMaterial Width="15" Height="15" 
-                            Kind="SearchWeb"  
-                            HorizontalAlignment="Center"
-                            VerticalAlignment="Center"
-                            Foreground="#ffffff"/>  
-                    </Button>
-                    <Button ToolTip="Save" Style="{DynamicResource buttonStyleSave}" 
-                            Command="{Binding SaveCommand}">
-                        <Icon:PackIconMaterial Width="15" Height="15" 
-                        Kind="Download"  
-                        HorizontalAlignment="Center"
-                        VerticalAlignment="Center"
-                        Foreground="#ffffff"/>  
-                    </Button>
-                    <Button ToolTip="Refresh" Style="{DynamicResource buttonStyleClear}" 
-                            Command="{Binding ResetCommand}">
-                        <Icon:PackIconMaterial Width="15" Height="15" 
-                        Kind="Refresh"  
+                        Kind="SearchWeb"  
                         HorizontalAlignment="Center"
                         VerticalAlignment="Center"
                         Foreground="#ffffff"/>
+                    </Button>
+                    <Button ToolTip="Save" Style="{DynamicResource buttonStyleSave}" 
+                        Command="{Binding SaveCommand}">
+                        <Icon:PackIconMaterial Width="15" Height="15" 
+                    Kind="Download"  
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Foreground="#ffffff"/>
+                    </Button>
+                    <Button ToolTip="Refresh" Style="{DynamicResource buttonStyleClear}" 
+                        Command="{Binding ResetCommand}">
+                        <Icon:PackIconMaterial Width="15" Height="15" 
+                    Kind="Refresh"  
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Foreground="#ffffff"/>
                     </Button>
                 </WrapPanel>
             </Grid>
         </StackPanel>
         <StackPanel Grid.Row="1" Width="800" Height="470">
             <DataGrid RowStyle="{DynamicResource dataGridRowStyle1}" ColumnHeaderStyle="{DynamicResource dataGridColumnHeaderStyle1}" 
-                      CellStyle="{DynamicResource dataGridCellStyle}" 
-                    Style="{DynamicResource dataGridStyle}"
-                    ItemsSource="{Binding  AuthorModel.Models}" SelectionChanged="DataGrid_SelectionChanged"
-                       x:Name="dataview"
-                      >
+                  CellStyle="{DynamicResource dataGridCellStyle}" 
+                Style="{DynamicResource dataGridStyle}"
+                ItemsSource="{Binding  AuthorModel.Models}"
+                   x:Name="dataview"
+                  >
                 <DataGrid.Columns>
                     <DataGridTextColumn IsReadOnly="True" Width="auto" Header="Authorcode" Binding="{Binding Authorcode}" />
                     <DataGridTextColumn IsReadOnly="True" Width="*" Header="AuthorName" Binding="{Binding AuthorName}" />
@@ -94,22 +94,22 @@
                             <DataTemplate>
                                 <StackPanel Orientation="Horizontal">
                                     <Button Style="{StaticResource buttongridedit}" ToolTip="Edit"
-                                            Command="{Binding DataContext.GetSingleCommand, ElementName=dataview}" 
-                                            CommandParameter="{Binding SelectedItems, ElementName=dataview}">
+                                        Command="{Binding DataContext.GetSingleCommand, ElementName=dataview}" 
+                                        CommandParameter="{Binding SelectedItems, ElementName=dataview}">
                                         <Icon:PackIconMaterial Width="15" Height="15" 
-                                            Kind="PencilOutline"  
-                                            HorizontalAlignment="Center"
-                                            VerticalAlignment="Center"
-                                            Foreground="#ffffff"/>
+                                        Kind="PencilOutline"  
+                                        HorizontalAlignment="Center"
+                                        VerticalAlignment="Center"
+                                        Foreground="#ffffff"/>
                                     </Button>
                                     <Button Style="{StaticResource buttongridremove}" ToolTip="Remove"
-                                            Command="{Binding DataContext.RemoveDataCommand, ElementName=dataview}" 
-                                             CommandParameter="{Binding SelectedItems, ElementName=dataview}">
+                                        Command="{Binding DataContext.RemoveDataCommand, ElementName=dataview}" 
+                                         CommandParameter="{Binding SelectedItems, ElementName=dataview}">
                                         <Icon:PackIconMaterial Width="15" Height="15" 
-                                            Kind="Delete"  
-                                            HorizontalAlignment="Center"
-                                            VerticalAlignment="Center"
-                                            Foreground="#ffffff"/>
+                                        Kind="Delete"  
+                                        HorizontalAlignment="Center"
+                                        VerticalAlignment="Center"
+                                        Foreground="#ffffff"/>
                                     </Button>
                                 </StackPanel>
                             </DataTemplate>
@@ -119,8 +119,8 @@
             </DataGrid>
         </StackPanel>
         <WrapPanel Orientation="Horizontal" Grid.Row="2" 
-                   Margin="0 6"
-                   HorizontalAlignment="Right" VerticalAlignment="Center">
+               Margin="0 6"
+               HorizontalAlignment="Right" VerticalAlignment="Center">
             <WrapPanel Orientation="Horizontal">
                 <WrapPanel Margin="0 0 20 0" HorizontalAlignment="Left" VerticalAlignment="Center">
                     <TextBlock  FontWeight="Bold" FontSize="14" Text="Page: " />
@@ -130,26 +130,27 @@
                     <TextBlock FontWeight="Bold" FontSize="14"  Text="{Binding AuthorModel.PageSize}" />
                 </WrapPanel>
                 <Button Style="{DynamicResource buttonStyleNext}"
-                        IsEnabled="{Binding AuthorModel.IsEnablePrevious}"
-                        Command="{Binding PreviousPageCommand}"
-                        >
+                    IsEnabled="{Binding AuthorModel.IsEnablePrevious}"
+                    Command="{Binding PreviousPageCommand}"
+                    >
                     <Icon:PackIconMaterial Width="15" Height="15" 
-                     Kind="PagePrevious"  
-                     HorizontalAlignment="Center"
-                     VerticalAlignment="Center"
-                     Foreground="#ffffff"/>
+                 Kind="PagePrevious"  
+                 HorizontalAlignment="Center"
+                 VerticalAlignment="Center"
+                 Foreground="#ffffff"/>
                 </Button>
                 <Button Style="{DynamicResource buttonStyleNext}"
-                        Command="{Binding NextPageCommand}"
-                        IsEnabled="{Binding AuthorModel.IsEnableNext}"
-                        >
+                    Command="{Binding NextPageCommand}"
+                    IsEnabled="{Binding AuthorModel.IsEnableNext}"
+                    >
                     <Icon:PackIconMaterial Width="15" Height="15" 
-                     Kind="PageNext"  
-                     HorizontalAlignment="Center"
-                     VerticalAlignment="Center"
-                     Foreground="#ffffff"/>
+                 Kind="PageNext"  
+                 HorizontalAlignment="Center"
+                 VerticalAlignment="Center"
+                 Foreground="#ffffff"/>
                 </Button>
             </WrapPanel>
         </WrapPanel>
     </Grid>
+
 </UserControl>

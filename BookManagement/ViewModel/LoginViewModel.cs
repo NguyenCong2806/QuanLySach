@@ -1,5 +1,7 @@
 ﻿using BookManagement.Common;
+using BookManagement.Helpper.Config;
 using BookManagement.Model;
+using BookManagement.Service.Interfaces;
 using BookManagement.Utilities;
 using SweetAlertSharp.Enums;
 using System.Threading.Tasks;
@@ -12,10 +14,12 @@ namespace BookManagement.ViewModel
     {
         public bool IsLogin { get; set; } = false;
         public UserLoginModel UserLogin { get; set; }
+        private IEmployeeService _employeeService;
         public LoginViewModel()
         {
             UserLogin = new UserLoginModel();
             ShutdownCommand = new AsyncRelayCommand<object>(Shutdown, null, null);
+            _employeeService = InstanceBase.EmployeeService;
         }
         #region Command
         public ICommand ShutdownCommand { get; set; }
@@ -48,14 +52,16 @@ namespace BookManagement.ViewModel
         private async Task LoginApp(object obj)
         {
             var data = UserLogin.Model;
-            var loginview = obj as Window;
+            Window loginview = obj as Window;
             if (loginview == null) return;
-            if (UserLogin.Model.UserName == "admin" && UserLogin.Model.PassWord == "admin") 
+
+            var res = await _employeeService.LoginApp(data);
+            if (res.IsSuccess) 
             {
                 IsLogin = true;
                 loginview.Close();
             }
-            await Task.CompletedTask;
+            
         }
     }
 }

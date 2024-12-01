@@ -257,6 +257,7 @@
     <Compile Include="Data\Dto\UserLoginDto.cs" />
     <Compile Include="Data\PagedList.cs" />
     <Compile Include="Data\ResultData.cs" />
+    <Compile Include="Data\ResultLogin.cs" />
     <Compile Include="Data\ValidatableBindableBase.cs" />
     <Compile Include="Helpper\Config\Btn.cs" />
     <Compile Include="Helpper\Config\InstanceBase.cs" />
@@ -271,6 +272,7 @@
     <Compile Include="Model\BookGenreModel.cs" />
     <Compile Include="Model\BookModel.cs" />
     <Compile Include="Model\BookPublisherModel.cs" />
+    <Compile Include="Model\EmployeeModel.cs" />
     <Compile Include="Model\SupplierModel.cs" />
     <Compile Include="Model\UserLoginModel.cs" />
     <Compile Include="Repositorys\Deployment\AsyncCommand.cs" />
